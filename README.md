@@ -42,9 +42,14 @@ Dann im Browser öffnen: [http://localhost:8080](http://localhost:8080)
 
 ## Deployment (GitHub Pages)
 
-Das Repository ist für GitHub Pages vorbereitet (`.nojekyll` im Root). Nach Push auf `main` wird die Seite unter der konfigurierten Pages-URL ausgeliefert.
+Das Repository folgt der GitHub-Pages-Konvention [`username.github.io`](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#types-of-github-pages-sites) und ist als **User/Organization Site** eingerichtet.
 
-Remote: `https://github.com/Prinz-Entertainment/indernetsehte.git`
+| | |
+|---|---|
+| Repository | [Prinz-Entertainment/Prinz-Entertainment.github.io](https://github.com/Prinz-Entertainment/Prinz-Entertainment.github.io) |
+| Live-URL | [https://prinz-entertainment.github.io/](https://prinz-entertainment.github.io/) |
+
+Nach Push auf `main` wird der Inhalt aus dem Repository-Root ausgeliefert (`.nojekyll` deaktiviert Jekyll). In den Repository-Einstellungen unter **Settings → Pages** muss **Deploy from branch** auf `main` / `/ (root)` stehen.
 
 ## Kontaktformular
 
