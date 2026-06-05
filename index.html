@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="de"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Prinz Entertainment | Entertainment on the Key</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500&amp;family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#e2e2e2",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "primary-fixed-dim": "#c9c6c5",
+                        "on-tertiary": "#ffffff",
+                        "secondary": "#5d5f5f",
+                        "error-container": "#ffdad6",
+                        "inverse-on-surface": "#f4f0ef",
+                        "on-primary-fixed-variant": "#474646",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#c8c6c6",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "surface-container": "#f1edec",
+                        "tertiary": "#000000",
+                        "inverse-surface": "#313030",
+                        "outline-variant": "#c4c7c7",
+                        "tertiary-container": "#1b1c1c",
+                        "tertiary-fixed": "#e4e2e1",
+                        "surface-container-high": "#ebe7e6",
+                        "primary": "#000000",
+                        "surface-dim": "#ddd9d8",
+                        "outline": "#747878",
+                        "surface-tint": "#5f5e5e",
+                        "on-primary-fixed": "#1c1b1b",
+                        "error": "#ba1a1a",
+                        "on-error": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#1c1b1b",
+                        "surface-variant": "#e5e2e1",
+                        "surface-bright": "#fdf8f8",
+                        "on-secondary": "#ffffff",
+                        "on-surface": "#1c1b1b",
+                        "on-primary-container": "#858383",
+                        "surface-container-highest": "#e5e2e1",
+                        "primary-fixed": "#e5e2e1",
+                        "on-secondary-fixed-variant": "#454747",
+                        "on-tertiary-container": "#858383",
+                        "inverse-primary": "#c9c6c5",
+                        "surface": "#fdf8f8",
+                        "on-surface-variant": "#444748",
+                        "on-background": "#1c1b1b",
+                        "on-secondary-container": "#5f6161",
+                        "background": "#fdf8f8",
+                        "surface-container-low": "#f7f3f2",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#dcdddd"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0",
+                        "lg": "0",
+                        "xl": "0",
+                        "full": "0"
+                    },
+                    "maxWidth": {
+                        "container-max": "1440px"
+                    },
+                    "spacing": {
+                        "gutter": "32px",
+                        "container-max": "1440px",
+                        "section-gap": "120px",
+                        "section-padding": "128px",
+                        "margin-mobile": "24px",
+                        "margin-desktop": "64px",
+                        "unit": "8px",
+                        "unit-2": "16px",
+                        "unit-3": "24px",
+                        "unit-4": "32px"
+                    },
+                    "fontFamily": {
+                        "caption": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "label-caps": ["Hanken Grotesk"],
+                        "label-sm": ["Hanken Grotesk"],
+                        "headline-md": ["Montserrat"],
+                        "display-xl": ["Montserrat"],
+                        "headline-lg": ["Montserrat"],
+                        "headline-lg-mobile": ["Montserrat", "sans-serif"],
+                        "display-xl-mobile": ["Montserrat"],
+                        "body-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "caption": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "300"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "display-xl": ["80px", {"lineHeight": "90px", "letterSpacing": "0", "fontWeight": "700"}],
+                        "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "0", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "38px", "letterSpacing": "0", "fontWeight": "700"}],
+                        "display-xl-mobile": ["48px", {"lineHeight": "52px", "letterSpacing": "0", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "300"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-line {
+            height: 1px;
+            background-color: #000000;
+            width: 100%;
+        }
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-on-scroll.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .elegant-card {
+            background: transparent;
+            border-top: 1px solid #1c1b1b;
+            transition: border-color 0.3s ease;
+        }
+        .elegant-card:hover {
+            border-color: #747878;
+        }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-33.33%); }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden selection:bg-primary-fixed selection:text-primary">
+<!-- Navigation -->
+<nav class="fixed top-0 w-full z-50 mix-blend-difference px-6 md:px-margin-desktop py-8 flex justify-between items-center transition-all duration-700" id="main-nav">
+<div class="hidden md:flex flex-1 items-center gap-12">
+<a class="text-[10px] uppercase tracking-[0.3em] text-white hover:opacity-50 transition-opacity" href="#services">Services</a>
+<a class="text-[10px] uppercase tracking-[0.3em] text-white hover:opacity-50 transition-opacity" href="#about">About</a>
+</div>
+<div class="flex items-center justify-center md:px-8">
+<img alt="Prinz Logo" class="w-20 md:w-24" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChVYR8IrAKa-wUi_clm70jYMqa9AC_ybFATTDPAC89Y8mvm6jGoIC-uviVEwTDvOaiimDa2axvZoDtFEfgAcPcxzBoWIbUkpOmZsgrLWCWKbAtz-q_R7wowjEJiHwACefPq98CmdZ7fCVbj9XMqReq0nqUSv9XnSaEt9wydBu74GLq6zdntSQhT6Xpgp5l-b_NGAspSUZw-K31Ohav3HSumYHPmCrwQMqslkP1cA67PUciEj6JYAn_xPAdV8zXk8q9ss99KwR37Ps"/>
+</div>
+<div class="hidden md:flex flex-1 items-center justify-end gap-12">
+<a class="text-[10px] uppercase tracking-[0.3em] text-white hover:opacity-50 transition-opacity" href="#events">Events</a>
+<a class="text-[10px] uppercase tracking-[0.3em] text-white hover:opacity-50 transition-opacity border-b border-white pb-1" href="#contact">Inquire</a>
+</div>
+<a class="md:hidden text-[10px] uppercase tracking-[0.3em] text-white border-b border-white pb-1" href="#contact">Inquire</a>
+</nav>
+<!-- Hero Section -->
+<header class="relative min-h-screen flex flex-col pt-[120px] px-margin-mobile md:px-margin-desktop bg-background">
+<div class="flex flex-col md:flex-row justify-between items-end mb-gutter gap-gutter">
+<div class="max-w-4xl">
+<div class="flex items-center gap-unit-2 mb-unit-4">
+<span class="editorial-line w-12"></span>
+<span class="font-label-caps text-label-caps uppercase tracking-widest">Entertainment on the Key</span>
+</div>
+<h1 class="font-display-xl-mobile md:font-display-xl text-display-xl-mobile md:text-display-xl leading-[0.9] text-primary">
+                    ENTFESSELTE <br/> ELEGANZ.
+                </h1>
+</div>
+<div class="hidden md:block font-label-caps text-label-caps text-on-surface-variant">
+                09 May, 2026<br/>HAMBURG, DE
+            </div>
+</div>
+<div class="relative w-full h-[614px] md:h-[716px] overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 cursor-crosshair">
+<img alt="Entertainment on the Key" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-[2000ms]" data-alt="A cinematic, high-contrast close-up of a grand piano in a minimalist, light-filled luxury hotel lobby in Hamburg. The lighting is soft yet dramatic, emphasizing the polished black surface of the instrument. The surrounding space is vast with clean architectural lines, reflecting a sophisticated, high-end editorial aesthetic. The atmosphere is calm and artistic, devoid of visual noise." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnYqLlLesUaCv0WKuNqpCAdWZfLzoUdvMNbBjs0niyuMN5tY9WWjmK3j1SA5E6LaLsnR3gwuPKNZT51_4q7qhJi6RE54vg7VZSh9MaKAmz-zBpHRxF1_QK_0qDwyKjWCG0nfFyke-1YqXN_WVqppLKQk-N__P3VzJbKUs7PyZ4M8VeRner8Yok9sulZO3cWtYM0H3qqP4X5My4BHMKVXQu49BuFKp7bAKI-1Sf0pS9mwx0y1S0ekcQ4nHkwfMWc8UkXvMiC2VNkzE"/>
+<div class="absolute bottom-gutter left-gutter max-w-md bg-background p-gutter">
+<p class="font-body-lg text-body-lg text-primary">DJ-Auftritte, Klaviermusik und musikalische Begleitung für stilvolle Events in Hamburg und Umgebung.</p>
+</div>
+</div>
+</header>
+<!-- Services Section -->
+<section class="py-section-padding bg-surface-container-low" id="services">
+<div class="px-6 md:px-margin-desktop max-w-container-max mx-auto text-center mb-24">
+<span class="text-primary font-label-sm tracking-widest uppercase block mb-4">Portfolio</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-6 uppercase">Exklusive Leistungen</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto font-body-lg">Maßgeschneiderte musikalische Konzepte für höchste Ansprüche und unvergessliche Momente.</p>
+</div>
+<div class="px-6 md:px-margin-desktop max-w-container-max mx-auto grid md:grid-cols-3 gap-10">
+<!-- Card 1 -->
+<div class="elegant-card p-10 flex flex-col items-start text-left">
+<div class="w-16 h-16 bg-transparent flex items-center justify-center mb-8 border border-on-surface/20">
+<span class="material-symbols-outlined text-primary text-3xl">headset</span>
+</div>
+<h3 class="font-headline-md text-2xl text-on-surface mb-6 uppercase">DJ-Service</h3>
+<p class="text-on-surface-variant font-body-md mb-10 leading-relaxed">
+                    Vom lockeren Get-together bis zur ausgelassenen Party-Nacht. Stilvolle Musikauswahl trifft auf modernste Technik und feinfühliges Reading-the-Crowd.
+                </p>
+<div class="mt-auto w-full overflow-hidden">
+<img alt="DJ Service" class="w-full h-56 object-cover hover:scale-105 transition-transform duration-700 grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhs6OUpSTnD1OyBNKj26_d8xP7Ss9nc9QyuYxmgDLHBKXb1INu6dQ4nj_DfHY78fsg0xh6bzDqgQpSx5f4Vk8Sj5bcBvAVk1u98-lQOiATKWpMkhtvO4o1xgbd1VPv6cNEXOTxZLhC9RCKkEMgR7-bCiEQVRN-h7rPKfh8OQDCOFIgZ_UgmgVNiwZ0A3fJM2HZUXDJqpH1IuSJwEoVXwasFHCy6ExuPbbduT_1KOSr2tT7Aax52jtpPjL3mosvhAyJptx4wVbSFsg"/>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="elegant-card p-10 flex flex-col items-start text-left">
+<div class="w-16 h-16 bg-transparent flex items-center justify-center mb-8 border border-on-surface/20">
+<span class="material-symbols-outlined text-primary text-3xl">piano</span>
+</div>
+<h3 class="font-headline-md text-2xl text-on-surface mb-6 uppercase">Live-Piano</h3>
+<p class="text-on-surface-variant font-body-md mb-10 leading-relaxed">
+                    Elegante Live-Untermalung am Piano für Empfänge, Dinner oder Trauungen. Klassische Stücke, moderne Interpretationen und gefühlvolle Eigenkompositionen.
+                </p>
+<div class="mt-auto w-full overflow-hidden">
+<img alt="Live Piano" class="w-full h-56 object-cover hover:scale-105 transition-transform duration-700 grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrmkJeubc0Gps5n0ku64jkmtImZDFewCRqTpokcyYLK_Swr_XiS_zHgB0i7d5N-WZlowr0XZNgmWrItJoA-RZhRkK8F47UE4rt0haevq4UqHP76dGkegn-qgSdeWsg_itR5GHLIrTeJvISqmEmR4VTmFyUpeRrPc9KcGEoEC203f3ttoWlTS2JZx_5rf_wYpXVROOnmHNyI7Fnf1OB_KC_X7a9BfPQHNlXLXSwB53tt1r7sPxfMo_qRUPZC3uJ_x55hU-5MJ3dYi0"/>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="elegant-card p-10 flex flex-col items-start text-left">
+<div class="w-16 h-16 bg-transparent flex items-center justify-center mb-8 border border-on-surface/20">
+<span class="material-symbols-outlined text-primary text-3xl">auto_awesome</span>
+</div>
+<h3 class="font-headline-md text-2xl text-on-surface mb-6 uppercase">Eventbegleitung</h3>
+<p class="text-on-surface-variant font-body-md mb-10 leading-relaxed">
+                    Das Beste aus beiden Welten. Eine nahtlose Kombination aus Live-Musik und DJing, abgestimmt auf den dramaturgischen Verlauf Ihrer Veranstaltung.
+                </p>
+<div class="mt-auto w-full overflow-hidden">
+<img alt="Eventbegleitung" class="w-full h-56 object-cover hover:scale-105 transition-transform duration-700 grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbbgRAntQM82Xti5zwMy5c5Epcp2camrXbFWuCtMqYsoWAKTb5OcVyL2o1DTRejYGq7KrZpA3G3BZy1DZm2ROkawEjUVtfpMWJk8UYyD6SQyXxZy31a5VaLja-VPXWCA5N1Eh4XmIl_Hd8-5j14riql2tvMf4vUifI92zusx6SsDl27vCh2b9ZlYdFwoZ4yyzhJoStvR5OsYD6N03Yzx4OxgCLxd8zUj4KBVcuuUqYf53RegZVTQ0ky4la6lqKnsTqCZ-ZOnhzJJA"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Musikstile - Grid with Muted Accents -->
+<section class="bg-surface-container py-section-gap px-margin-mobile md:px-margin-desktop" id="genres">
+<div class="max-w-screen-xl mx-auto">
+<h2 class="font-display-xl-mobile md:font-headline-lg text-primary mb-section-gap reveal-on-scroll">Musikstile</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-outline-variant reveal-on-scroll">
+<div class="bg-background p-gutter aspect-square flex flex-col justify-between group cursor-pointer hover:bg-secondary-container transition-colors">
+<span class="font-label-caps text-label-caps text-on-surface-variant">01</span>
+<div>
+<h4 class="font-headline-md text-headline-md mb-unit">Electronic &amp; Club</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">House, Techno, Drum &amp; Bass. Treibende Rhythmen für die Tanzfläche.</p>
+</div>
+<div class="w-12 h-12 border border-primary flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined">arrow_forward</span>
+</div>
+</div>
+<div class="bg-background p-gutter aspect-square flex flex-col justify-between group cursor-pointer hover:bg-[#e4e2e1] transition-colors">
+<span class="font-label-caps text-label-caps text-on-surface-variant">02</span>
+<div>
+<h4 class="font-headline-md text-headline-md mb-unit">Kultur &amp; Charts</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Aktuelle Hits und zeitlose Klassiker. Musik aus der Heimat für jede Generation.</p>
+</div>
+<div class="w-12 h-12 border border-primary flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined">arrow_forward</span>
+</div>
+</div>
+<div class="bg-background p-gutter aspect-square flex flex-col justify-between group cursor-pointer hover:bg-[#d0cccb] transition-colors">
+<span class="font-label-caps text-label-caps text-on-surface-variant">03</span>
+<div>
+<h4 class="font-headline-md text-headline-md mb-unit">Jazz &amp; Lounge</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Entspannte Klänge für Dinner und Empfänge. Unaufdringlich und edel.</p>
+</div>
+<div class="w-12 h-12 border border-primary flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-section-padding px-6 md:px-margin-desktop max-w-container-max mx-auto" id="about">
+<div class="flex flex-col items-center text-center mb-16 space-y-4">
+<span class="text-primary font-label-sm tracking-widest uppercase">Der Mensch hinter der Musik</span>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface max-w-3xl uppercase">
+                Persönlich, Professionell, Einzigartig.
+            </h2>
+</div>
+<div class="grid md:grid-cols-12 gap-16 items-center">
+<div class="md:col-span-5">
+<div class="relative">
+<div class="absolute -inset-4 border border-on-surface/10"></div>
+<img alt="Sem Prinz Portrait" class="relative w-full h-[650px] object-cover grayscale border border-on-surface/5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWh__WUPqHA1U8W8xkxoxlH02au7HAO0AvEj8XHNik0nCKy7qaO53x4mko_s5cQ2J0MNAV3hziIOdlZxzfdW-Gs9KUE0UtnMwlrIE2yvP5_K7pxVGuKDW8XTSKOb5M2vM-1Yjo0yLinklfQzdXRosJ5JL-5kgoj22Rk3SbghiJsa3EAwEgsfIAwBlyKvbXczdqs-PcaBeclfcwjuDfDbCxKCNDoZE3S6xdGz0IbkpmTEw-xKDeMTZqrhQwn1hWYSF-Gh50FcWSHkc"/>
+</div>
+</div>
+<div class="md:col-span-7 space-y-10 text-left">
+<div class="space-y-6 text-on-surface-variant font-body-lg text-body-lg">
+<p>
+                        Beheimatet im Herzen von Hamburg, verbinde ich jahrelange Erfahrung in der Eventbranche mit einer tiefen Leidenschaft für exzellente Akustik. Bei Prinz Entertainment geht es nicht nur um Playlists – es geht um <span class="text-on-surface italic font-medium">Atmosphäre</span>.
+                    </p>
+<p>
+                        Ich glaube daran, dass jedes Event eine eigene Seele hat. Deshalb lege ich größten Wert auf eine detaillierte Planung und eine persönliche Absprache, um Ihre Vision klanglich perfekt umzusetzen. Zuverlässigkeit und ein diskretes, professionelles Auftreten sind dabei mein Fundament.
+                    </p>
+</div>
+<div class="grid grid-cols-2 gap-12 pt-6 border-t border-on-surface/10">
+<div>
+<div class="text-primary font-headline-md text-headline-md mb-2">10+ Jahre</div>
+<div class="text-on-surface/60 text-label-sm uppercase tracking-wider">Erfahrung</div>
+</div>
+<div>
+<div class="text-primary font-headline-md text-headline-md mb-2">500+</div>
+<div class="text-on-surface/60 text-label-sm uppercase tracking-wider">Begleitete Events</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Referenzen - Minimalist Grid -->
+<section class="bg-background py-section-gap px-margin-mobile md:px-margin-desktop border-t border-primary/10" id="events">
+<div class="flex justify-between items-baseline mb-gutter">
+<h2 class="font-headline-lg text-headline-lg uppercase">Referenzen</h2>
+<span class="font-label-caps text-label-caps">Selected Clients</span>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter border-t border-primary/20 pt-gutter">
+<div class="reveal-on-scroll">
+<p class="font-label-caps text-label-caps mb-unit opacity-50">Hotels</p>
+<p class="font-body-lg text-body-lg text-primary">Radisson Blu Hamburg Dammtor</p>
+</div>
+<div class="reveal-on-scroll" style="transition-delay: 100ms;">
+<p class="font-label-caps text-label-caps mb-unit opacity-50">Business</p>
+<p class="font-body-lg text-body-lg text-primary">Corporate Events &amp; Galas</p>
+</div>
+<div class="reveal-on-scroll" style="transition-delay: 200ms;">
+<p class="font-label-caps text-label-caps mb-unit opacity-50">Private</p>
+<p class="font-body-lg text-body-lg text-primary">50+ Premium Hochzeiten</p>
+</div>
+<div class="reveal-on-scroll" style="transition-delay: 300ms;">
+<p class="font-label-caps text-label-caps mb-unit opacity-50">Clubs</p>
+<p class="font-body-lg text-body-lg text-primary">Hanseatic Nightlife Scene</p>
+</div>
+</div>
+</section>
+<!-- Trust Points -->
+<section class="py-section-padding bg-surface-container">
+<div class="px-6 md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col items-center text-center mb-20">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-6 uppercase">Warum Prinz Entertainment?</h2>
+<div class="w-24 h-0.5 bg-primary mb-8"></div>
+</div>
+<div class="grid lg:grid-cols-2 gap-20 items-center">
+<div class="space-y-12">
+<div class="flex gap-8 items-start group">
+<div class="flex-shrink-0 w-16 h-16 bg-transparent flex items-center justify-center border border-on-surface/20 group-hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-primary text-3xl">handshake</span>
+</div>
+<div>
+<h4 class="font-headline-md text-2xl text-on-surface mb-3 uppercase">Persönliche Absprache</h4>
+<p class="text-on-surface-variant font-body-md max-w-md">Keine Standard-Konzepte. Jedes Detail wird in einem Vorgespräch genau nach Ihren Wünschen definiert.</p>
+</div>
+</div>
+<div class="flex gap-8 items-start group">
+<div class="flex-shrink-0 w-16 h-16 bg-transparent flex items-center justify-center border border-on-surface/20 group-hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-primary text-3xl">library_music</span>
+</div>
+<div>
+<h4 class="font-headline-md text-2xl text-on-surface mb-3 uppercase">Stilvolle Musikauswahl</h4>
+<p class="text-on-surface-variant font-body-md max-w-md">Von modernem Deep-House bis zu zeitlosen Klassikern – immer mit dem richtigen Gespür für den Moment.</p>
+</div>
+</div>
+<div class="flex gap-8 items-start group">
+<div class="flex-shrink-0 w-16 h-16 bg-transparent flex items-center justify-center border border-on-surface/20 group-hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-primary text-3xl">verified</span>
+</div>
+<div>
+<h4 class="font-headline-md text-2xl text-on-surface mb-3 uppercase">Zuverlässige Planung</h4>
+<p class="text-on-surface-variant font-body-md max-w-md">Pünktlichkeit, High-End Equipment und ein klares Back-up Konzept für absolute Sorgenfreiheit.</p>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="elegant-card relative z-10 p-16">
+<span class="material-symbols-outlined text-primary/20 text-6xl absolute top-8 left-8">format_quote</span>
+<blockquote class="italic text-on-surface font-headline-md text-2xl mb-10 leading-relaxed relative z-10">
+                            "Musik ist nicht nur Klang, sondern das Gefühl, das bleibt, wenn das Licht ausgeht."
+                        </blockquote>
+<div class="flex items-center gap-6">
+<div class="w-16 h-16 bg-primary flex items-center justify-center font-bold text-on-primary text-xl">S</div>
+<div>
+<div class="font-headline-md text-xl text-on-surface uppercase">Sem Prinz</div>
+<div class="text-on-surface/50 text-label-sm uppercase tracking-widest">Gründer &amp; Artist</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Gallery -->
+<section class="py-section-padding overflow-hidden bg-background">
+<div class="px-6 md:px-margin-desktop max-w-container-max mx-auto mb-16 text-center">
+<span class="text-primary font-label-sm tracking-widest uppercase block mb-4">Inspiration</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface uppercase">Einblicke</h2>
+</div>
+<div class="flex gap-10 animate-[scroll_50s_linear_infinite] w-[300%]">
+<div class="flex gap-10 shrink-0">
+<img alt="Mood 1" class="w-[400px] h-[550px] object-cover border border-on-surface/5 grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVVtbD7sfr7vVG48s5CMvR97KBgRt4iwl2fiwd85w_HNGlb4LYvFTz2j-bvhcKXN2LoxvJGZc4Lx3jYhr6DuJ6MkjePB80LK3wwFQg6PblxsXY1NgCTOHWMCdT1VwJzaywgO8YrNxre_YrRQDyz-LTnr6NtwSn2PDtd_b-CAVedmUDvkk6ORg0wjjTzaZveWc6b1QKLbDlOnNkiqxYGaRJ3ss1qIAMqMd49uYZ_kOmaVxvGzcYKC129Y0bSanHpgfgD5W2iwYM5QM"/>
+<img alt="Mood 2" class="w-[550px] h-[550px] object-cover border border-on-surface/5 grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBD5zYN18jqmkKgUL58jiIW9Zj4ViFyL-N-u160Sbb087FZTcSapvUSTuOqsSeVL6j3SnoXE_ErR0vbwKPFKQOt0FgEwVOA4GU0m-C8DwvAy0fvYUBDxbfucuKxv0jM7IuXv9QnIIiXcEhWD8PWZbp6W6mRVgYOqZwkIzBQIknimyJ3CaF8amEQXENbDgvcRRPugb-EQvTIyrf9GcMOHgSi3DFPUm9a-BmNvyzJlCZOnz3geema4ntiGgqkwi5gRJWwHMFmifT46O8"/>
+<img alt="Mood 3" class="w-[400px] h-[550px] object-cover border border-on-surface/5 grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBooEJQloPz1g1JqUNFY-j9Va16eIOWwmWJZp0s_YZQjDChRLwI9xwrx0J6v6qjiU6Jbop_U9-suYXdYCmgkNkPIBg2OrI-YCIeyWPLJpUP1vIFqvULZG_fhVBA51usjzwOCd3kXuKda38FD1wvKVRkHnfmtPvfKXVHh8AjdP17ZIi6Zuil4QqAN6h09MDvxGMKfCoa2jvCIZDyEeh6MduCcZtW-wM_SHGn3RELelmPTEjmT7OJ9321PYCmL5lwWAzI8YE1HqS4PLw"/>
+<img alt="Mood 4" class="w-[450px] h-[550px] object-cover border border-on-surface/5 grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjJ8Vkkno7K7_OegwKbyIVL_hphXykM2aYPjhdMZv5Sk5Ps5LbITULIllpQVkNspL0cNBbnjd6WizORNgl0eQCfR_o7sjWkWs7KueXq9HC_sQ3HyFnVojYmI4JMpMuode3BK5UE4fzTP0Lzho97GB9_K_Rxtz3KvjmsPYC-f1hJJ2sSKrgGRYnxG3vR-Qxa4_iaSQ50BK-lx8UB8iKmztVuSigwhdhHH2vYo4Niyu2NDaFW2arJH8Ur2vwBtbnyHkLyES9iPVwntU"/>
+</div>
+</div>
+</section>
+<!-- Contact -->
+<section class="py-section-padding bg-white" id="contact">
+<div class="px-6 md:px-margin-desktop max-w-7xl mx-auto">
+<div class="grid lg:grid-cols-2 gap-24">
+<div class="space-y-12">
+<h2 class="text-6xl md:text-8xl font-extrabold uppercase leading-none kerning-tight">Let's <br/> talk.</h2>
+<div class="space-y-8">
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined font-light">location_on</span>
+<span class="text-[11px] uppercase tracking-widest font-medium">Hamburg, Deutschland</span>
+</div>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined font-light">mail</span>
+<span class="text-[11px] uppercase tracking-widest font-medium">semprinz.entertainment@gmail.com</span>
+</div>
+</div>
+<div class="pt-12">
+<img alt="Logo" class="h-16 opacity-10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCR1AeNKEHII7OQN1smUwY2nbUizUom-i09rTZc9278VvtPK82xF0jd_PL6nrS2jbawXFMefzx0-UoG_VOtFZKB-LWo7x9Mqrk--MVMN--tntF_AIEYgkcjqd6SY8YbOoJMerIM9VTfah4sXqwKorOJ9gvbrrQY9fVfh9VvTuoC3BrSDMcHqezYHgQ8aTc9VCRXXaEXZBCuTq75GoY8jsUR4nm7GbZhJ0FgoELAu78uoTG5Q8UEn-0aS4Rc49ZXo--zpLw42w3VuTA"/>
+</div>
+</div>
+<form class="space-y-12" data-contact-form>
+<div class="grid md:grid-cols-2 gap-12">
+<div class="space-y-2 border-b border-black/10 pb-4">
+<label class="text-[9px] uppercase tracking-[0.3em] text-black/40">Your Name</label>
+<input class="w-full bg-transparent border-none focus:ring-0 p-0 text-xs uppercase tracking-widest placeholder:text-black/20" name="name" placeholder="Full Name" type="text"/>
+</div>
+<div class="space-y-2 border-b border-black/10 pb-4">
+<label class="text-[9px] uppercase tracking-[0.3em] text-black/40">Email Address</label>
+<input class="w-full bg-transparent border-none focus:ring-0 p-0 text-xs uppercase tracking-widest placeholder:text-black/20" name="email" placeholder="mail@example.com" type="email"/>
+</div>
+</div>
+<div class="grid md:grid-cols-2 gap-12">
+<div class="space-y-2 border-b border-black/10 pb-4">
+<label class="text-[9px] uppercase tracking-[0.3em] text-black/40">Event Type</label>
+<select class="w-full bg-transparent border-none focus:ring-0 p-0 text-xs uppercase tracking-widest appearance-none" name="eventType">
+<option>Wedding</option>
+<option>Corporate</option>
+<option>Gala</option>
+<option>Private</option>
+</select>
+</div>
+<div class="space-y-2 border-b border-black/10 pb-4">
+<label class="text-[9px] uppercase tracking-[0.3em] text-black/40">Preferred Date</label>
+<input class="w-full bg-transparent border-none focus:ring-0 p-0 text-xs uppercase tracking-widest" name="date" type="date"/>
+</div>
+</div>
+<div class="space-y-2 border-b border-black/10 pb-4">
+<label class="text-[9px] uppercase tracking-[0.3em] text-black/40">Your Message</label>
+<textarea class="w-full bg-transparent border-none focus:ring-0 p-0 text-xs uppercase tracking-widest placeholder:text-black/20 resize-none" name="message" placeholder="Tell me about your vision..." rows="4"></textarea>
+</div>
+<button class="w-full bg-black text-white py-6 text-[10px] uppercase tracking-[0.4em] font-bold hover:bg-black/80 transition-colors" type="submit">
+                        Send Inquiry
+                    </button>
+<p class="text-[10px] uppercase tracking-[0.3em] text-black/40" data-form-note></p>
+</form>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-black text-white py-20 px-6 md:px-margin-desktop border-t border-white/5">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-end gap-16">
+<div class="space-y-12">
+<img alt="Logo" class="h-10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChVYR8IrAKa-wUi_clm70jYMqa9AC_ybFATTDPAC89Y8mvm6jGoIC-uviVEwTDvOaiimDa2axvZoDtFEfgAcPcxzBoWIbUkpOmZsgrLWCWKbAtz-q_R7wowjEJiHwACefPq98CmdZ7fCVbj9XMqReq0nqUSv9XnSaEt9wydBu74GLq6zdntSQhT6Xpgp5l-b_NGAspSUZw-K31Ohav3HSumYHPmCrwQMqslkP1cA67PUciEj6JYAn_xPAdV8zXk8q9ss99KwR37Ps"/>
+<div class="flex gap-8">
+<a class="text-[10px] uppercase tracking-widest hover:opacity-50" href="#">Instagram</a>
+<a class="text-[10px] uppercase tracking-widest hover:opacity-50" href="#">Youtube</a>
+<a class="text-[10px] uppercase tracking-widest hover:opacity-50" href="#">Vimeo</a>
+</div>
+</div>
+<div class="text-right space-y-4">
+<div class="text-[10px] uppercase tracking-[0.4em] text-white/40">© 2026 Prinz Entertainment</div>
+<div class="text-[10px] uppercase tracking-[0.4em] text-white/40">All Rights Reserved — Hamburg</div>
+</div>
+</div>
+</footer>
+<script>
+        // Simple reveal on scroll observer
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+
+        // Simple Nav state change
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('main-nav');
+            if (!nav) return;
+            if (window.scrollY > 100) {
+                nav.classList.remove('py-8', 'mix-blend-difference');
+                nav.classList.add('py-4', 'bg-black/90', 'mix-blend-normal');
+            } else {
+                nav.classList.add('py-8', 'mix-blend-difference');
+                nav.classList.remove('py-4', 'bg-black/90', 'mix-blend-normal');
+            }
+        });
+    </script>
+<script src="script.js"></script>
+</body></html>
