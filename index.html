@@ -138,11 +138,198 @@
         }
         @keyframes scroll {
             0% { transform: translateX(0); }
-            100% { transform: translateX(-33.33%); }
+            100% { transform: translateX(calc(-100% + 100vw)); }
+        }
+        body.is-loading {
+            overflow: hidden;
+        }
+        body.is-loading #main-nav,
+        body.is-loading header {
+            opacity: 0;
+            transform: translateY(24px);
+        }
+        body:not(.is-loading) #main-nav {
+            animation: palmer-content-in 900ms cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+        body:not(.is-loading) header {
+            animation: palmer-content-in 1100ms cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+        .palmer-intro {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            display: grid;
+            grid-template-rows: 1fr auto 1fr;
+            align-items: center;
+            justify-items: center;
+            padding: clamp(24px, 5vw, 72px);
+            background: #000000;
+            color: #ffffff;
+            overflow: hidden;
+            animation: palmer-intro-exit 900ms cubic-bezier(0.69, 0, 0.05, 0.98) 5.35s forwards;
+        }
+        .palmer-intro__line {
+            width: min(1140px, 86vw);
+            height: 2px;
+            background: rgba(255, 255, 255, 0.9);
+            transform: translateX(-1520px);
+            animation: palmer-line-in 1200ms cubic-bezier(0.16, 1, 0.3, 1) 4s forwards;
+        }
+        .palmer-intro__line--top {
+            align-self: end;
+        }
+        .palmer-intro__line--bottom {
+            align-self: start;
+        }
+        .palmer-intro__stage {
+            display: grid;
+            justify-items: center;
+            gap: clamp(18px, 3vw, 34px);
+            width: 100%;
+            opacity: 0.001;
+            transform: translateY(-520px);
+            animation: palmer-title-drop 2.8s cubic-bezier(0.69, 0, 0.05, 0.98) forwards;
+        }
+        .palmer-intro__logo {
+            width: min(960px, 86vw);
+            max-height: min(58vh, 640px);
+            object-fit: contain;
+            filter: contrast(1.08);
+            opacity: 1;
+            transform: translateY(-350px) scale(0.6);
+            transform-origin: center center;
+            animation: palmer-logo-reveal 1.4s cubic-bezier(0.95, -0.02, 0.38, 1) 2.9s forwards;
+        }
+        .palmer-intro__loader {
+            position: relative;
+            width: min(900px, 78vw);
+            height: 7px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.16);
+            opacity: 0.9;
+            transform: translateX(-1440px);
+            animation: palmer-loader-in 2.5s cubic-bezier(0.16, 1, 0.3, 1) 3s forwards;
+        }
+        .palmer-intro__loader span {
+            position: absolute;
+            inset: 0;
+            display: block;
+            background: #ffffff;
+            opacity: 0.9;
+            transform: translateY(-350px) scaleX(0.6);
+            transform-origin: left center;
+            animation: palmer-loader-fill 1.4s cubic-bezier(0.96, -0.02, 0.38, 1.01) 2.9s forwards;
+        }
+        @keyframes palmer-title-drop {
+            from {
+                opacity: 0.001;
+                transform: translateY(-520px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes palmer-logo-reveal {
+            from {
+                transform: translateY(-350px) scale(0.6);
+            }
+            to {
+                transform: translateY(0) scale(1);
+            }
+        }
+        @keyframes palmer-loader-in {
+            from {
+                transform: translateX(-1440px);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+        @keyframes palmer-loader-fill {
+            from {
+                opacity: 1;
+                transform: translateY(-350px) scaleX(0.6);
+            }
+            to {
+                opacity: 0.9;
+                transform: translateY(0) scaleX(1);
+            }
+        }
+        @keyframes palmer-line-in {
+            from {
+                transform: translateX(-1520px);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+        @keyframes palmer-intro-exit {
+            from {
+                opacity: 1;
+                transform: translateY(0);
+                visibility: visible;
+            }
+            to {
+                opacity: 0;
+                transform: translateY(-40px);
+                visibility: hidden;
+                pointer-events: none;
+            }
+        }
+        @keyframes palmer-content-in {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @media (max-width: 640px) {
+            .palmer-intro {
+                padding: 28px 18px;
+            }
+            .palmer-intro__line,
+            .palmer-intro__loader {
+                width: 86vw;
+            }
+            .palmer-intro__logo {
+                width: min(110vw, 720px);
+                max-height: 48vh;
+            }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            body.is-loading #main-nav,
+            body.is-loading header {
+                opacity: 1;
+                transform: none;
+            }
+            .palmer-intro {
+                animation-duration: 1ms;
+                animation-delay: 800ms;
+            }
+            .palmer-intro__stage,
+            .palmer-intro__logo,
+            .palmer-intro__loader,
+            .palmer-intro__loader span,
+            .palmer-intro__line {
+                animation-duration: 1ms;
+                animation-delay: 1ms;
+            }
         }
     </style>
 </head>
-<body class="bg-background text-on-background font-body-md overflow-x-hidden selection:bg-primary-fixed selection:text-primary">
+<body class="is-loading bg-background text-on-background font-body-md overflow-x-hidden selection:bg-primary-fixed selection:text-primary">
+<div aria-hidden="true" class="palmer-intro" data-palmer-intro>
+<div class="palmer-intro__line palmer-intro__line--top"></div>
+<div class="palmer-intro__stage">
+<img alt="" class="palmer-intro__logo" src="assets/prinz_logo_transparent.png"/>
+<div class="palmer-intro__loader"><span></span></div>
+</div>
+<div class="palmer-intro__line palmer-intro__line--bottom"></div>
+</div>
 <!-- Navigation -->
 <nav class="fixed top-0 w-full z-50 mix-blend-difference px-6 md:px-margin-desktop py-8 flex justify-between items-center transition-all duration-700" id="main-nav">
 <div class="hidden md:flex flex-1 items-center gap-12">
@@ -175,7 +362,7 @@
             </div>
 </div>
 <div class="relative w-full h-[614px] md:h-[716px] overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 cursor-crosshair">
-<img alt="Entertainment on the Key" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-[2000ms]" data-alt="A cinematic, high-contrast close-up of a grand piano in a minimalist, light-filled luxury hotel lobby in Hamburg. The lighting is soft yet dramatic, emphasizing the polished black surface of the instrument. The surrounding space is vast with clean architectural lines, reflecting a sophisticated, high-end editorial aesthetic. The atmosphere is calm and artistic, devoid of visual noise." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnYqLlLesUaCv0WKuNqpCAdWZfLzoUdvMNbBjs0niyuMN5tY9WWjmK3j1SA5E6LaLsnR3gwuPKNZT51_4q7qhJi6RE54vg7VZSh9MaKAmz-zBpHRxF1_QK_0qDwyKjWCG0nfFyke-1YqXN_WVqppLKQk-N__P3VzJbKUs7PyZ4M8VeRner8Yok9sulZO3cWtYM0H3qqP4X5My4BHMKVXQu49BuFKp7bAKI-1Sf0pS9mwx0y1S0ekcQ4nHkwfMWc8UkXvMiC2VNkzE"/>
+<img alt="Entertainment on the Key" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-[2000ms]" data-alt="A cinematic piano performance in a refined hotel lobby, with the artist seated at a grand piano and guests in the background." src="assets/events-piano.png"/>
 <div class="absolute bottom-gutter left-gutter max-w-md bg-background p-gutter">
 <p class="font-body-lg text-body-lg text-primary">DJ-Auftritte, Klaviermusik und musikalische Begleitung für stilvolle Events in Hamburg und Umgebung.</p>
 </div>
@@ -186,7 +373,7 @@
 <div class="px-6 md:px-margin-desktop max-w-container-max mx-auto text-center mb-24">
 <span class="text-primary font-label-sm tracking-widest uppercase block mb-4">Portfolio</span>
 <h2 class="font-headline-lg text-headline-lg text-on-surface mb-6 uppercase">Exklusive Leistungen</h2>
-<p class="text-on-surface-variant max-w-2xl mx-auto font-body-lg">Maßgeschneiderte musikalische Konzepte für höchste Ansprüche und unvergessliche Momente.</p>
+<p class="text-on-surface-variant max-w-2xl mx-auto font-body-lg">Individuell-Musikalische Konzepte für höchste Ansprüche und unvergessliche Momente.</p>
 </div>
 <div class="px-6 md:px-margin-desktop max-w-container-max mx-auto grid md:grid-cols-3 gap-10">
 <!-- Card 1 -->
@@ -220,9 +407,9 @@
 <div class="w-16 h-16 bg-transparent flex items-center justify-center mb-8 border border-on-surface/20">
 <span class="material-symbols-outlined text-primary text-3xl">auto_awesome</span>
 </div>
-<h3 class="font-headline-md text-2xl text-on-surface mb-6 uppercase">Eventbegleitung</h3>
+<h3 class="font-headline-md text-2xl text-on-surface mb-6 uppercase">TONTECHNIK</h3>
 <p class="text-on-surface-variant font-body-md mb-10 leading-relaxed">
-                    Das Beste aus beiden Welten. Eine nahtlose Kombination aus Live-Musik und DJing, abgestimmt auf den dramaturgischen Verlauf Ihrer Veranstaltung.
+                    Klarer Sound für besondere Momente. Ob Rede, Empfang, Live-Piano oder DJ-Set – ich übernehme Aufbau, Soundcheck und technische Betreuung, damit Ihre Veranstaltung klanglich sauber und professionell begleitet wird.
                 </p>
 <div class="mt-auto w-full overflow-hidden">
 <img alt="Eventbegleitung" class="w-full h-56 object-cover hover:scale-105 transition-transform duration-700 grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbbgRAntQM82Xti5zwMy5c5Epcp2camrXbFWuCtMqYsoWAKTb5OcVyL2o1DTRejYGq7KrZpA3G3BZy1DZm2ROkawEjUVtfpMWJk8UYyD6SQyXxZy31a5VaLja-VPXWCA5N1Eh4XmIl_Hd8-5j14riql2tvMf4vUifI92zusx6SsDl27vCh2b9ZlYdFwoZ4yyzhJoStvR5OsYD6N03Yzx4OxgCLxd8zUj4KBVcuuUqYf53RegZVTQ0ky4la6lqKnsTqCZ-ZOnhzJJA"/>
@@ -280,7 +467,7 @@
 <div class="md:col-span-5">
 <div class="relative">
 <div class="absolute -inset-4 border border-on-surface/10"></div>
-<img alt="Sem Prinz Portrait" class="relative w-full h-[650px] object-cover grayscale border border-on-surface/5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWh__WUPqHA1U8W8xkxoxlH02au7HAO0AvEj8XHNik0nCKy7qaO53x4mko_s5cQ2J0MNAV3hziIOdlZxzfdW-Gs9KUE0UtnMwlrIE2yvP5_K7pxVGuKDW8XTSKOb5M2vM-1Yjo0yLinklfQzdXRosJ5JL-5kgoj22Rk3SbghiJsa3EAwEgsfIAwBlyKvbXczdqs-PcaBeclfcwjuDfDbCxKCNDoZE3S6xdGz0IbkpmTEw-xKDeMTZqrhQwn1hWYSF-Gh50FcWSHkc"/>
+<img alt="Sem Prinz Portrait" class="relative w-full h-[650px] object-cover grayscale border border-on-surface/5" src="assets/portrait-width-922.png"/>
 </div>
 </div>
 <div class="md:col-span-7 space-y-10 text-left">
@@ -317,68 +504,59 @@
 <p class="font-body-lg text-body-lg text-primary">Radisson Blu Hamburg Dammtor</p>
 </div>
 <div class="reveal-on-scroll" style="transition-delay: 100ms;">
-<p class="font-label-caps text-label-caps mb-unit opacity-50">Business</p>
-<p class="font-body-lg text-body-lg text-primary">Corporate Events &amp; Galas</p>
+<p class="font-label-caps text-label-caps mb-unit opacity-50">Partners</p>
+<p class="font-body-lg text-body-lg text-primary">Sonus Veranstaltungstechnik Hamburg</p>
 </div>
 <div class="reveal-on-scroll" style="transition-delay: 200ms;">
 <p class="font-label-caps text-label-caps mb-unit opacity-50">Private</p>
 <p class="font-body-lg text-body-lg text-primary">50+ Premium Hochzeiten</p>
 </div>
 <div class="reveal-on-scroll" style="transition-delay: 300ms;">
-<p class="font-label-caps text-label-caps mb-unit opacity-50">Clubs</p>
-<p class="font-body-lg text-body-lg text-primary">Hanseatic Nightlife Scene</p>
+<p class="font-label-caps text-label-caps mb-unit opacity-50">Club &amp; Open Events</p>
+<p class="font-body-lg text-body-lg text-primary">Just Pull Up<br/>Cath Me Events</p>
 </div>
 </div>
 </section>
-<!-- Trust Points -->
-<section class="py-section-padding bg-surface-container">
-<div class="px-6 md:px-margin-desktop max-w-container-max mx-auto">
-<div class="flex flex-col items-center text-center mb-20">
-<h2 class="font-headline-lg text-headline-lg text-on-surface mb-6 uppercase">Warum Prinz Entertainment?</h2>
-<div class="w-24 h-0.5 bg-primary mb-8"></div>
-</div>
-<div class="grid lg:grid-cols-2 gap-20 items-center">
+<!-- Warum Prinz Entertainment? (Icon-based from SCREEN_31 iteration) -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop border-t border-primary/10 bg-background">
+<div class="grid md:grid-cols-2 gap-32 items-start">
+<div class="space-y-16">
+<h2 class="text-headline-lg uppercase leading-none">Warum <br/>Prinz Entertainment?</h2>
 <div class="space-y-12">
-<div class="flex gap-8 items-start group">
-<div class="flex-shrink-0 w-16 h-16 bg-transparent flex items-center justify-center border border-on-surface/20 group-hover:border-primary transition-colors">
-<span class="material-symbols-outlined text-primary text-3xl">handshake</span>
-</div>
-<div>
-<h4 class="font-headline-md text-2xl text-on-surface mb-3 uppercase">Persönliche Absprache</h4>
-<p class="text-on-surface-variant font-body-md max-w-md">Keine Standard-Konzepte. Jedes Detail wird in einem Vorgespräch genau nach Ihren Wünschen definiert.</p>
+<div class="flex gap-8 group">
+<span class="material-symbols-outlined text-4xl text-primary opacity-20 group-hover:opacity-100 transition-opacity">piano</span>
+<div class="space-y-2 border-b border-black/10 pb-8 flex-1">
+<h4 class="text-headline-md uppercase tracking-tighter">Persönlich</h4>
+<p class="text-body-md text-on-surface-variant">Keine Standard-Konzepte. Jedes Detail wird in einem Vorgespräch genau nach Ihren Wünschen definiert.</p>
 </div>
 </div>
-<div class="flex gap-8 items-start group">
-<div class="flex-shrink-0 w-16 h-16 bg-transparent flex items-center justify-center border border-on-surface/20 group-hover:border-primary transition-colors">
-<span class="material-symbols-outlined text-primary text-3xl">library_music</span>
-</div>
-<div>
-<h4 class="font-headline-md text-2xl text-on-surface mb-3 uppercase">Stilvolle Musikauswahl</h4>
-<p class="text-on-surface-variant font-body-md max-w-md">Von modernem Deep-House bis zu zeitlosen Klassikern – immer mit dem richtigen Gespür für den Moment.</p>
+<div class="flex gap-8 group">
+<span class="material-symbols-outlined text-4xl text-primary opacity-20 group-hover:opacity-100 transition-opacity">headphones</span>
+<div class="space-y-2 border-b border-black/10 pb-8 flex-1">
+<h4 class="text-headline-md uppercase tracking-tighter">Stilvoll</h4>
+<p class="text-body-md text-on-surface-variant">Von modernem Deep-House bis zu zeitlosen Klassikern – immer mit dem richtigen Gespür für den Moment.</p>
 </div>
 </div>
-<div class="flex gap-8 items-start group">
-<div class="flex-shrink-0 w-16 h-16 bg-transparent flex items-center justify-center border border-on-surface/20 group-hover:border-primary transition-colors">
-<span class="material-symbols-outlined text-primary text-3xl">verified</span>
-</div>
-<div>
-<h4 class="font-headline-md text-2xl text-on-surface mb-3 uppercase">Zuverlässige Planung</h4>
-<p class="text-on-surface-variant font-body-md max-w-md">Pünktlichkeit, High-End Equipment und ein klares Back-up Konzept für absolute Sorgenfreiheit.</p>
+<div class="flex gap-8 group">
+<span class="material-symbols-outlined text-4xl text-primary opacity-20 group-hover:opacity-100 transition-opacity">verified</span>
+<div class="space-y-2 border-b border-black/10 pb-8 flex-1">
+<h4 class="text-headline-md uppercase tracking-tighter">Zuverlässig</h4>
+<p class="text-body-md text-on-surface-variant">Pünktlichkeit, High-End Equipment und ein klares Back-up Konzept für absolute Sorgenfreiheit.</p>
 </div>
 </div>
 </div>
-<div class="relative">
-<div class="elegant-card relative z-10 p-16">
-<span class="material-symbols-outlined text-primary/20 text-6xl absolute top-8 left-8">format_quote</span>
-<blockquote class="italic text-on-surface font-headline-md text-2xl mb-10 leading-relaxed relative z-10">
-                            "Musik ist nicht nur Klang, sondern das Gefühl, das bleibt, wenn das Licht ausgeht."
-                        </blockquote>
+</div>
+<div class="md:pt-24">
+<div class="p-16 border border-black/10 relative bg-surface-container-low reveal-on-scroll">
+<span class="text-6xl absolute -top-8 -left-4 bg-background px-4 font-bold">“</span>
+<blockquote class="italic text-2xl font-light mb-12 leading-relaxed text-primary">
+                    Musik ist nicht nur Klang, sondern das Gefühl, das bleibt, wenn das Licht ausgeht.
+                </blockquote>
 <div class="flex items-center gap-6">
-<div class="w-16 h-16 bg-primary flex items-center justify-center font-bold text-on-primary text-xl">S</div>
+<div class="w-px h-12 bg-primary"></div>
 <div>
-<div class="font-headline-md text-xl text-on-surface uppercase">Sem Prinz</div>
-<div class="text-on-surface/50 text-label-sm uppercase tracking-widest">Gründer &amp; Artist</div>
-</div>
+<div class="text-headline-md text-primary">Sem Prinz</div>
+<div class="text-label-sm uppercase tracking-widest opacity-60">Gründer &amp; Artist</div>
 </div>
 </div>
 </div>
@@ -391,12 +569,29 @@
 <span class="text-primary font-label-sm tracking-widest uppercase block mb-4">Inspiration</span>
 <h2 class="font-headline-lg text-headline-lg text-on-surface uppercase">Einblicke</h2>
 </div>
-<div class="flex gap-10 animate-[scroll_50s_linear_infinite] w-[300%]">
+<div class="flex gap-10 animate-[scroll_90s_linear_infinite] w-max">
 <div class="flex gap-10 shrink-0">
-<img alt="Mood 1" class="w-[400px] h-[550px] object-cover border border-on-surface/5 grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVVtbD7sfr7vVG48s5CMvR97KBgRt4iwl2fiwd85w_HNGlb4LYvFTz2j-bvhcKXN2LoxvJGZc4Lx3jYhr6DuJ6MkjePB80LK3wwFQg6PblxsXY1NgCTOHWMCdT1VwJzaywgO8YrNxre_YrRQDyz-LTnr6NtwSn2PDtd_b-CAVedmUDvkk6ORg0wjjTzaZveWc6b1QKLbDlOnNkiqxYGaRJ3ss1qIAMqMd49uYZ_kOmaVxvGzcYKC129Y0bSanHpgfgD5W2iwYM5QM"/>
-<img alt="Mood 2" class="w-[550px] h-[550px] object-cover border border-on-surface/5 grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBD5zYN18jqmkKgUL58jiIW9Zj4ViFyL-N-u160Sbb087FZTcSapvUSTuOqsSeVL6j3SnoXE_ErR0vbwKPFKQOt0FgEwVOA4GU0m-C8DwvAy0fvYUBDxbfucuKxv0jM7IuXv9QnIIiXcEhWD8PWZbp6W6mRVgYOqZwkIzBQIknimyJ3CaF8amEQXENbDgvcRRPugb-EQvTIyrf9GcMOHgSi3DFPUm9a-BmNvyzJlCZOnz3geema4ntiGgqkwi5gRJWwHMFmifT46O8"/>
-<img alt="Mood 3" class="w-[400px] h-[550px] object-cover border border-on-surface/5 grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBooEJQloPz1g1JqUNFY-j9Va16eIOWwmWJZp0s_YZQjDChRLwI9xwrx0J6v6qjiU6Jbop_U9-suYXdYCmgkNkPIBg2OrI-YCIeyWPLJpUP1vIFqvULZG_fhVBA51usjzwOCd3kXuKda38FD1wvKVRkHnfmtPvfKXVHh8AjdP17ZIi6Zuil4QqAN6h09MDvxGMKfCoa2jvCIZDyEeh6MduCcZtW-wM_SHGn3RELelmPTEjmT7OJ9321PYCmL5lwWAzI8YE1HqS4PLw"/>
-<img alt="Mood 4" class="w-[450px] h-[550px] object-cover border border-on-surface/5 grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjJ8Vkkno7K7_OegwKbyIVL_hphXykM2aYPjhdMZv5Sk5Ps5LbITULIllpQVkNspL0cNBbnjd6WizORNgl0eQCfR_o7sjWkWs7KueXq9HC_sQ3HyFnVojYmI4JMpMuode3BK5UE4fzTP0Lzho97GB9_K_Rxtz3KvjmsPYC-f1hJJ2sSKrgGRYnxG3vR-Qxa4_iaSQ50BK-lx8UB8iKmztVuSigwhdhHH2vYo4Niyu2NDaFW2arJH8Ur2vwBtbnyHkLyES9iPVwntU"/>
+<video aria-label="Event Impression 1" autoplay class="w-[400px] h-[550px] object-cover border border-on-surface/5 grayscale hover:grayscale-0 transition-all duration-700" loop muted playsinline preload="metadata">
+<source src="assets/gallery-event-1.mov"/>
+</video>
+<video aria-label="Event Impression 2" autoplay class="w-[550px] h-[550px] object-cover border border-on-surface/5 grayscale hover:grayscale-0 transition-all duration-700" loop muted playsinline preload="metadata">
+<source src="assets/gallery-event-2.mov"/>
+</video>
+<video aria-label="Event Impression 3" autoplay class="w-[400px] h-[550px] object-cover border border-on-surface/5 grayscale hover:grayscale-0 transition-all duration-700" loop muted playsinline preload="metadata">
+<source src="assets/gallery-event-3.mov"/>
+</video>
+<video aria-label="Event Impression 4" autoplay class="w-[450px] h-[550px] object-cover border border-on-surface/5 grayscale hover:grayscale-0 transition-all duration-700" loop muted playsinline preload="metadata">
+<source src="assets/gallery-event-4.mov"/>
+</video>
+<video aria-label="Event Impression 5" autoplay class="w-[400px] h-[550px] object-cover border border-on-surface/5 grayscale hover:grayscale-0 transition-all duration-700" loop muted playsinline preload="metadata">
+<source src="assets/gallery-event-5-small.mov"/>
+</video>
+<video aria-label="Event Impression 6" autoplay class="w-[550px] h-[550px] object-cover border border-on-surface/5 grayscale hover:grayscale-0 transition-all duration-700" loop muted playsinline preload="metadata">
+<source src="assets/gallery-event-6.mp4"/>
+</video>
+<video aria-label="Event Impression 7" autoplay class="w-[400px] h-[550px] object-cover border border-on-surface/5 grayscale hover:grayscale-0 transition-all duration-700" loop muted playsinline preload="metadata">
+<source src="assets/gallery-event-7.mov"/>
+</video>
 </div>
 </div>
 </section>
@@ -476,6 +671,22 @@
 </div>
 </footer>
 <script>
+        (() => {
+            const intro = document.querySelector("[data-palmer-intro]");
+            const finishIntro = () => {
+                document.body.classList.remove("is-loading");
+                intro?.remove();
+            };
+
+            intro?.addEventListener("animationend", (event) => {
+                if (event.target === intro && event.animationName === "palmer-intro-exit") {
+                    finishIntro();
+                }
+            });
+
+            window.setTimeout(finishIntro, 6500);
+        })();
+
         // Simple reveal on scroll observer
         const observerOptions = {
             threshold: 0.1
