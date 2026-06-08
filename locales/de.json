@@ -1,0 +1,121 @@
+{
+  "meta": {
+    "title": "Prinz Entertainment | Entertainment on the Key"
+  },
+  "nav": {
+    "services": "Services",
+    "about": "About",
+    "events": "Events",
+    "inquire": "Anfragen",
+    "openMenu": "Menü öffnen"
+  },
+  "hero": {
+    "tagline": "Entertainment on the Key",
+    "title": "ENTFESSELTE <br/> ELEGANZ.",
+    "date": "09 May, 2026<br/>HAMBURG, DE",
+    "description": "DJ-Auftritte, Klaviermusik und musikalische Begleitung für stilvolle Events in Hamburg und Umgebung.",
+    "imageAlt": "Ein cineastischer Klavierauftritt in einer eleganten Hotellobby, mit dem Künstler am Flügel und Gästen im Hintergrund."
+  },
+  "services": {
+    "label": "Portfolio",
+    "title": "Exklusive Leistungen",
+    "subtitle": "Individuell-Musikalische Konzepte für höchste Ansprüche und unvergessliche Momente.",
+    "dj": {
+      "title": "DJ-Service",
+      "description": "Vom lockeren Get-together bis zur ausgelassenen Party-Nacht. Stilvolle Musikauswahl trifft auf modernste Technik und feinfühliges Reading-the-Crowd.",
+      "imageAlt": "DJ Service"
+    },
+    "piano": {
+      "title": "Live-Piano",
+      "description": "Elegante Live-Untermalung am Piano für Empfänge, Dinner oder Trauungen. Klassische Stücke, moderne Interpretationen und gefühlvolle Eigenkompositionen.",
+      "imageAlt": "Live Piano"
+    },
+    "sound": {
+      "title": "TONTECHNIK",
+      "description": "Klarer Sound für besondere Momente. Ob Rede, Empfang, Live-Piano oder DJ-Set – ich übernehme Aufbau, Soundcheck und technische Betreuung, damit Ihre Veranstaltung klanglich sauber und professionell begleitet wird.",
+      "imageAlt": "Eventbegleitung"
+    }
+  },
+  "genres": {
+    "title": "Musikstile",
+    "electronic": {
+      "title": "Electronic & Club",
+      "description": "House, Techno, Drum & Bass. Treibende Rhythmen für die Tanzfläche."
+    },
+    "charts": {
+      "title": "Kultur & Charts",
+      "description": "Aktuelle Hits und zeitlose Klassiker. Musik aus der Heimat für jede Generation."
+    },
+    "jazz": {
+      "title": "Jazz & Lounge",
+      "description": "Entspannte Klänge für Dinner und Empfänge. Unaufdringlich und edel."
+    }
+  },
+  "about": {
+    "label": "Der Mensch hinter der Musik",
+    "title": "Persönlich, Professionell, Einzigartig.",
+    "portraitAlt": "Sem Prinz Portrait",
+    "paragraph1": "Beheimatet im Herzen von Hamburg, verbinde ich jahrelange Erfahrung in der Eventbranche mit einer tiefen Leidenschaft für exzellente Akustik. Bei Prinz Entertainment geht es nicht nur um Playlists – es geht um <span class=\"text-on-surface italic font-medium\">Atmosphäre</span>.",
+    "paragraph2": "Ich glaube daran, dass jedes Event eine eigene Seele hat. Deshalb lege ich größten Wert auf eine detaillierte Planung und eine persönliche Absprache, um Ihre Vision klanglich perfekt umzusetzen. Zuverlässigkeit und ein diskretes, professionelles Auftreten sind dabei mein Fundament.",
+    "stat1Value": "10+ Jahre",
+    "stat1Label": "Erfahrung",
+    "stat2Value": "500+",
+    "stat2Label": "Begleitete Events"
+  },
+  "references": {
+    "title": "Referenzen",
+    "label": "Selected Clients",
+    "hotels": "Hotels",
+    "partners": "Partners",
+    "private": "Private",
+    "club": "Club & Open Events",
+    "hotelName": "Radisson Blu Hamburg Dammtor",
+    "partnerName": "Sonus Veranstaltungstechnik Hamburg",
+    "privateName": "50+ Premium Hochzeiten",
+    "clubName": "Just Pull Up<br/>Cath Me Events"
+  },
+  "why": {
+    "title": "Warum <br/>Prinz Entertainment?",
+    "personal": {
+      "title": "Persönlich",
+      "description": "Keine Standard-Konzepte. Jedes Detail wird in einem Vorgespräch genau nach Ihren Wünschen definiert."
+    },
+    "stylish": {
+      "title": "Stilvoll",
+      "description": "Von modernem Deep-House bis zu zeitlosen Klassikern – immer mit dem richtigen Gespür für den Moment."
+    },
+    "reliable": {
+      "title": "Zuverlässig",
+      "description": "Pünktlichkeit, High-End Equipment und ein klares Back-up Konzept für absolute Sorgenfreiheit."
+    },
+    "quote": "Musik ist nicht nur Klang, sondern das Gefühl, das bleibt, wenn das Licht ausgeht.",
+    "name": "Sem Prinz",
+    "role": "Gründer & Artist"
+  },
+  "gallery": {
+    "label": "Inspiration",
+    "title": "Einblicke",
+    "videoLabel": "Event Impression"
+  },
+  "contact": {
+    "title": "Let's <br/> talk.",
+    "location": "Hamburg, Deutschland"
+  },
+  "footer": {
+    "copyright": "© 2026 Prinz Entertainment",
+    "rights": "All Rights Reserved — Hamburg"
+  },
+  "form": {
+    "phone": "Telefonnummer",
+    "guests": "Gästeanzahl",
+    "location": "Ort",
+    "subject": "Anfrage Prinz-Entertainment",
+    "header": "Neue Anfrage für Prinz-Entertainment",
+    "name": "Name",
+    "email": "E-Mail",
+    "date": "Eventdatum",
+    "eventType": "Eventart",
+    "message": "Nachricht",
+    "success": "Ihre Anfrage wurde für Ihr E-Mail-Programm vorbereitet."
+  }
+}

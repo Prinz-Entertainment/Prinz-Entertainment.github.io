@@ -1,0 +1,121 @@
+{
+  "meta": {
+    "title": "Prinz Entertainment | Entertainment on the Key"
+  },
+  "nav": {
+    "services": "Services",
+    "about": "About",
+    "events": "Events",
+    "inquire": "Inquire",
+    "openMenu": "Open menu"
+  },
+  "hero": {
+    "tagline": "Entertainment on the Key",
+    "title": "UNLEASHED <br/> ELEGANCE.",
+    "date": "09 May, 2026<br/>HAMBURG, DE",
+    "description": "DJ performances, piano music, and musical accompaniment for stylish events in Hamburg and the surrounding area.",
+    "imageAlt": "A cinematic piano performance in a refined hotel lobby, with the artist seated at a grand piano and guests in the background."
+  },
+  "services": {
+    "label": "Portfolio",
+    "title": "Exclusive Services",
+    "subtitle": "Tailored musical concepts for the highest standards and unforgettable moments.",
+    "dj": {
+      "title": "DJ Service",
+      "description": "From relaxed get-togethers to exuberant party nights. Stylish music selection meets state-of-the-art technology and intuitive crowd reading.",
+      "imageAlt": "DJ Service"
+    },
+    "piano": {
+      "title": "Live Piano",
+      "description": "Elegant live piano accompaniment for receptions, dinners, or weddings. Classical pieces, modern interpretations, and heartfelt original compositions.",
+      "imageAlt": "Live Piano"
+    },
+    "sound": {
+      "title": "Sound Engineering",
+      "description": "Clear sound for special moments. Whether speeches, receptions, live piano, or DJ sets – I handle setup, soundcheck, and technical support so your event sounds polished and professional.",
+      "imageAlt": "Event Support"
+    }
+  },
+  "genres": {
+    "title": "Music Styles",
+    "electronic": {
+      "title": "Electronic & Club",
+      "description": "House, Techno, Drum & Bass. Driving rhythms for the dance floor."
+    },
+    "charts": {
+      "title": "Culture & Charts",
+      "description": "Current hits and timeless classics. Music from home for every generation."
+    },
+    "jazz": {
+      "title": "Jazz & Lounge",
+      "description": "Relaxed sounds for dinners and receptions. Unobtrusive and refined."
+    }
+  },
+  "about": {
+    "label": "The person behind the music",
+    "title": "Personal, Professional, Unique.",
+    "portraitAlt": "Sem Prinz Portrait",
+    "paragraph1": "Based in the heart of Hamburg, I combine years of experience in the events industry with a deep passion for excellent acoustics. At Prinz Entertainment, it's not just about playlists – it's about <span class=\"text-on-surface italic font-medium\">atmosphere</span>.",
+    "paragraph2": "I believe every event has its own soul. That's why I place great emphasis on detailed planning and personal consultation to bring your vision to life sonically. Reliability and a discreet, professional presence are my foundation.",
+    "stat1Value": "10+ Years",
+    "stat1Label": "Experience",
+    "stat2Value": "500+",
+    "stat2Label": "Events Accompanied"
+  },
+  "references": {
+    "title": "References",
+    "label": "Selected Clients",
+    "hotels": "Hotels",
+    "partners": "Partners",
+    "private": "Private",
+    "club": "Club & Open Events",
+    "hotelName": "Radisson Blu Hamburg Dammtor",
+    "partnerName": "Sonus Veranstaltungstechnik Hamburg",
+    "privateName": "50+ Premium Weddings",
+    "clubName": "Just Pull Up<br/>Cath Me Events"
+  },
+  "why": {
+    "title": "Why <br/>Prinz Entertainment?",
+    "personal": {
+      "title": "Personal",
+      "description": "No standard concepts. Every detail is defined in a preliminary meeting according to your wishes."
+    },
+    "stylish": {
+      "title": "Stylish",
+      "description": "From modern deep house to timeless classics – always with the right feel for the moment."
+    },
+    "reliable": {
+      "title": "Reliable",
+      "description": "Punctuality, high-end equipment, and a clear backup concept for absolute peace of mind."
+    },
+    "quote": "Music is not just sound, but the feeling that remains when the lights go out.",
+    "name": "Sem Prinz",
+    "role": "Founder & Artist"
+  },
+  "gallery": {
+    "label": "Inspiration",
+    "title": "Insights",
+    "videoLabel": "Event Impression"
+  },
+  "contact": {
+    "title": "Let's <br/> talk.",
+    "location": "Hamburg, Germany"
+  },
+  "footer": {
+    "copyright": "© 2026 Prinz Entertainment",
+    "rights": "All Rights Reserved — Hamburg"
+  },
+  "form": {
+    "phone": "Phone number",
+    "guests": "Number of guests",
+    "location": "Venue",
+    "subject": "Inquiry Prinz Entertainment",
+    "header": "New inquiry for Prinz Entertainment",
+    "name": "Name",
+    "email": "Email",
+    "date": "Event date",
+    "eventType": "Event type",
+    "message": "Message",
+    "success": "Your inquiry has been prepared for your email program."
+  }
+}

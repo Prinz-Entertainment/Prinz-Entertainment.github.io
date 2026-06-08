@@ -1,14 +1,19 @@
 # Prinz Entertainment – Website
 
-Statische Marketing-Website für **Prinz Entertainment** (*Entertainment on the Key*). Präsentation von Services, Genres, Events und Kontaktmöglichkeit – optimiert für GitHub Pages.
+Statische Marketing-Website für **Prinz Entertainment** (_Entertainment on the
+Key_). Präsentation von Services, Genres, Events und Kontaktmöglichkeit –
+optimiert für GitHub Pages.
 
 ## Tech-Stack
 
-- **HTML** – semantisches Markup, deutschsprachiger Inhalt
-- **Tailwind CSS** (CDN) – Utility-Klassen mit projektspezifischer Konfiguration in `index.html`
-- **styles.css** – ergänzende Styles (Navigation, Formulare, Animationen)
-- **script.js** – Mobile Navigation, Smooth Scroll, Kontaktformular via `mailto:`
-- **DESIGN.md** – Design-Tokens (*Cinéma Noir Editorial*): Farben, Typografie, Spacing
+- **HTML** – modulare Partials unter `partials/`
+- **Tailwind CSS** (CDN) – Utility-Klassen mit Konfiguration in
+  `js/tailwind-config.js`
+- **css/custom.css** – ergänzende Styles (Intro-Animation, Scroll-Reveal, Cards)
+- **js/** – Partial-Loader, i18n, Seiteninteraktionen
+- **locales/** – Übersetzungen (DE/EN)
+- **DESIGN.md** – Design-Tokens (_Cinéma Noir Editorial_): Farben, Typografie,
+  Spacing
 
 Kein Build-Schritt nötig – reine Static-Site.
 
@@ -16,12 +21,21 @@ Kein Build-Schritt nötig – reine Static-Site.
 
 ```
 .
-├── index.html      # Hauptseite
-├── styles.css      # Custom CSS
-├── script.js       # Interaktionen
-├── DESIGN.md       # Design-System-Referenz
-├── assets/         # Bilder (Hero, Events, Portraits, …)
-└── .nojekyll       # GitHub Pages: Jekyll deaktivieren
+├── index.html          # Shell (lädt Partials per fetch)
+├── partials/           # HTML-Abschnitte (nav, hero, services, …)
+├── css/
+│   └── custom.css      # Custom CSS
+├── js/
+│   ├── tailwind-config.js
+│   ├── includes.js     # Partial-Loader
+│   ├── i18n.js         # Sprachumschaltung
+│   └── main.js         # Intro, Nav, Scroll-Reveal
+├── locales/
+│   ├── de.json
+│   └── en.json
+├── assets/             # Bilder & Videos
+├── DESIGN.md
+└── .nojekyll           # GitHub Pages: Jekyll deaktivieren
 ```
 
 ## Lokal starten
@@ -38,22 +52,24 @@ npx serve .
 
 Dann im Browser öffnen: [http://localhost:8080](http://localhost:8080)
 
-> **Hinweis:** Tailwind und Google Fonts werden per CDN geladen – für die lokale Vorschau ist eine Internetverbindung nötig.
+> **Hinweis:** Partials und Locales werden per `fetch()` geladen – `file://`
+> funktioniert nicht. Tailwind und Google Fonts kommen per CDN; für die lokale
+> Vorschau ist eine Internetverbindung nötig.
 
 ## Deployment (GitHub Pages)
 
-Das Repository folgt der GitHub-Pages-Konvention [`username.github.io`](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#types-of-github-pages-sites) und ist als **User/Organization Site** eingerichtet.
+Das Repository folgt der GitHub-Pages-Konvention
+[`username.github.io`](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#types-of-github-pages-sites)
+und ist als **User/Organization Site** eingerichtet.
 
-| | |
-|---|---|
+|            |                                                                                                                           |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------- |
 | Repository | [Prinz-Entertainment/Prinz-Entertainment.github.io](https://github.com/Prinz-Entertainment/Prinz-Entertainment.github.io) |
-| Live-URL | [https://prinz-entertainment.github.io/](https://prinz-entertainment.github.io/) |
+| Live-URL   | [https://prinz-entertainment.github.io/](https://prinz-entertainment.github.io/)                                          |
 
-Nach Push auf `main` wird der Inhalt aus dem Repository-Root ausgeliefert (`.nojekyll` deaktiviert Jekyll). In den Repository-Einstellungen unter **Settings → Pages** muss **Deploy from branch** auf `main` / `/ (root)` stehen.
-
-## Kontaktformular
-
-Das Formular erzeugt beim Absenden eine vorbefüllte E-Mail (`mailto:`) an die im Script hinterlegte Adresse. Es gibt kein Backend – der Besucher muss ein lokales E-Mail-Programm nutzen.
+Nach Push auf `main` wird der Inhalt aus dem Repository-Root ausgeliefert
+(`.nojekyll` deaktiviert Jekyll). In den Repository-Einstellungen unter
+**Settings → Pages** muss **Deploy from branch** auf `main` / `/ (root)` stehen.
 
 ## Lizenz
 
