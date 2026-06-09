@@ -51,6 +51,7 @@ function initNavIndicator() {
   const nav = document.getElementById("main-nav");
   const indicator = nav?.querySelector("[data-nav-indicator]");
   const links = [...(nav?.querySelectorAll("[data-nav-link]") ?? [])];
+  const allLinks = [...document.querySelectorAll("[data-nav-link]")];
 
   if (!nav || !indicator || !links.length) return;
 
@@ -72,10 +73,13 @@ function initNavIndicator() {
 
   const setActiveLink = (link) => {
     activeLink = link;
+    const activeHref = link?.getAttribute("href");
 
-    links.forEach((navLink) => {
-      if (navLink === link) {
-        navLink.setAttribute("aria-current", "true");
+    allLinks.forEach((navLink) => {
+      const isActive = Boolean(activeHref) && navLink.getAttribute("href") === activeHref;
+      navLink.classList.toggle("is-active", isActive);
+      if (isActive) {
+        navLink.setAttribute("aria-current", "location");
       } else {
         navLink.removeAttribute("aria-current");
       }
@@ -84,11 +88,22 @@ function initNavIndicator() {
 
   const hideIndicator = () => {
     indicator.style.setProperty("--nav-active-opacity", "0");
+  };
+
+  const clearActiveLink = () => {
+    hideIndicator();
     setActiveLink(null);
   };
 
   const moveIndicator = (link) => {
-    if (!link || window.innerWidth < 768) {
+    if (!link) {
+      clearActiveLink();
+      return;
+    }
+
+    setActiveLink(link);
+
+    if (window.innerWidth < 768) {
       hideIndicator();
       return;
     }
@@ -109,7 +124,6 @@ function initNavIndicator() {
     );
     indicator.style.setProperty("--nav-active-width", `${linkRect.width}px`);
     indicator.style.setProperty("--nav-active-opacity", "1");
-    setActiveLink(link);
   };
 
   const getCurrentLink = () => {
@@ -134,7 +148,7 @@ function initNavIndicator() {
     const nextLink = getCurrentLink();
 
     if (!nextLink) {
-      hideIndicator();
+      clearActiveLink();
       return;
     }
 
@@ -152,8 +166,12 @@ function initNavIndicator() {
     window.requestAnimationFrame(updateIndicator);
   };
 
-  links.forEach((link) => {
-    link.addEventListener("click", () => moveIndicator(link));
+  allLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      const href = link.getAttribute("href");
+      const desktopLink = links.find((navLink) => navLink.getAttribute("href") === href);
+      moveIndicator(desktopLink);
+    });
   });
 
   window.addEventListener("scroll", requestUpdate, { passive: true });
