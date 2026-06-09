@@ -130,6 +130,21 @@ body.nav-open #main-nav {
 .material-symbols-outlined {
     font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
 }
+.nav-active-indicator {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: var(--nav-active-width, 0px);
+    height: 1px;
+    background: #ffffff;
+    opacity: var(--nav-active-opacity, 0);
+    pointer-events: none;
+    transform: translate3d(var(--nav-active-x, 0px), var(--nav-active-y, 0px), 0);
+    transition:
+        transform 420ms cubic-bezier(0.16, 1, 0.3, 1),
+        width 420ms cubic-bezier(0.16, 1, 0.3, 1),
+        opacity 180ms ease;
+}
 .editorial-line {
     height: 1px;
     background-color: #000000;
@@ -292,5 +307,8 @@ body:not(.is-loading) header {
     .palmer-intro__line {
         animation-duration: 1ms;
         animation-delay: 1ms;
+    }
+    .nav-active-indicator {
+        transition: none;
     }
 }
