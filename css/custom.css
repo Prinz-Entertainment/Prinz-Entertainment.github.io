@@ -216,26 +216,6 @@ body:not(.is-loading) header {
     transform-origin: center center;
     animation: palmer-logo-reveal 1.4s cubic-bezier(0.95, -0.02, 0.38, 1) 2.9s forwards;
 }
-.palmer-intro__loader {
-    position: relative;
-    width: min(900px, 78vw);
-    height: 7px;
-    overflow: hidden;
-    background: rgba(255, 255, 255, 0.16);
-    opacity: 0.9;
-    transform: translateX(-1440px);
-    animation: palmer-loader-in 2.5s cubic-bezier(0.16, 1, 0.3, 1) 3s forwards;
-}
-.palmer-intro__loader span {
-    position: absolute;
-    inset: 0;
-    display: block;
-    background: #ffffff;
-    opacity: 0.9;
-    transform: translateY(-350px) scaleX(0.6);
-    transform-origin: left center;
-    animation: palmer-loader-fill 1.4s cubic-bezier(0.96, -0.02, 0.38, 1.01) 2.9s forwards;
-}
 @keyframes palmer-title-drop {
     from {
         opacity: 0.001;
@@ -252,24 +232,6 @@ body:not(.is-loading) header {
     }
     to {
         transform: translateY(0) scale(1);
-    }
-}
-@keyframes palmer-loader-in {
-    from {
-        transform: translateX(-1440px);
-    }
-    to {
-        transform: translateX(0);
-    }
-}
-@keyframes palmer-loader-fill {
-    from {
-        opacity: 1;
-        transform: translateY(-350px) scaleX(0.6);
-    }
-    to {
-        opacity: 0.9;
-        transform: translateY(0) scaleX(1);
     }
 }
 @keyframes palmer-line-in {
@@ -307,8 +269,7 @@ body:not(.is-loading) header {
     .palmer-intro {
         padding: 28px 18px;
     }
-    .palmer-intro__line,
-    .palmer-intro__loader {
+    .palmer-intro__line {
         width: 86vw;
     }
     .palmer-intro__logo {
@@ -328,8 +289,6 @@ body:not(.is-loading) header {
     }
     .palmer-intro__stage,
     .palmer-intro__logo,
-    .palmer-intro__loader,
-    .palmer-intro__loader span,
     .palmer-intro__line {
         animation-duration: 1ms;
         animation-delay: 1ms;
