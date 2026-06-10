@@ -13,7 +13,7 @@
     "tagline": "Entertainment on the Key",
     "title": "ENTFESSELTE <br/> ELEGANZ.",
     "date": "09 May, 2026<br/>HAMBURG, DE",
-    "description": "DJ-Auftritte, Klaviermusik und musikalische Begleitung für stilvolle Events in Hamburg und Umgebung.",
+    "description": "DJ-Auftritte, Klaviermusik und musikalische Begleitung für stilvolle Events.",
     "imageAlt": "Ein cineastischer Klavierauftritt in einer eleganten Hotellobby, mit dem Künstler am Flügel und Gästen im Hintergrund."
   },
   "services": {
@@ -53,13 +53,13 @@
   },
   "about": {
     "label": "Der Mensch hinter der Musik",
-    "title": "Persönlich, Professionell, Einzigartig.",
+    "title": "Persönlich, Leidenschaftlich, Einzigartig.",
     "portraitAlt": "Sem Prinz Portrait",
-    "paragraph1": "Beheimatet im Herzen von Hamburg, verbinde ich jahrelange Erfahrung in der Eventbranche mit einer tiefen Leidenschaft für exzellente Akustik. Bei Prinz Entertainment geht es nicht nur um Playlists – es geht um <span class=\"text-on-surface italic font-medium\">Atmosphäre</span>.",
-    "paragraph2": "Ich glaube daran, dass jedes Event eine eigene Seele hat. Deshalb lege ich größten Wert auf eine detaillierte Planung und eine persönliche Absprache, um Ihre Vision klanglich perfekt umzusetzen. Zuverlässigkeit und ein diskretes, professionelles Auftreten sind dabei mein Fundament.",
+    "paragraph1": "Aus Hamburg heraus verbindet Prinz Entertainment musikalisches Feingefühl, technische Zuverlässigkeit und ein klares Verständnis für besondere Momente. Ob Klavier, DJ-Service oder professionelle Tontechnik, im Mittelpunkt steht nicht nur der Sound, sondern das gesamte <span class=\"text-on-surface italic font-medium\">Erlebnis</span>.",
+    "paragraph2": "Ich glaube daran, dass jedes Event einzigartig ist. Deshalb lege ich größten Wert auf eine detaillierte Planung und eine persönliche Absprache, um Ihre Vision klanglich perfekt umzusetzen. Zuverlässigkeit und ein diskretes, professionelles Auftreten sind dabei mein Fundament.",
     "stat1Value": "10+ Jahre",
     "stat1Label": "Erfahrung",
-    "stat2Value": "500+",
+    "stat2Value": "50+",
     "stat2Label": "Begleitete Events"
   },
   "references": {
@@ -82,15 +82,15 @@
     },
     "stylish": {
       "title": "Stilvoll",
-      "description": "Von modernem Deep-House bis zu zeitlosen Klassikern – immer mit dem richtigen Gespür für den Moment."
+      "description": "Von traditioneller Musik über internationale Sounds bis zu den aktuellen Charts aus aller Welt: Prinz Entertainment schafft die passende Stimmung mit Gefühl, Erfahrung und dem richtigen Gespür für jeden Moment."
     },
     "reliable": {
       "title": "Zuverlässig",
       "description": "Pünktlichkeit, High-End Equipment und ein klares Back-up Konzept für absolute Sorgenfreiheit."
     },
-    "quote": "Musik ist nicht nur Klang, sondern das Gefühl, das bleibt, wenn das Licht ausgeht.",
+    "quote": "Musik ist nicht nur Klang, sondern die Unterschrift jeder Szene.",
     "name": "Sem Prinz",
-    "role": "Gründer & Artist"
+    "role": "Gründer & Künstler"
   },
   "gallery": {
     "label": "Inspiration",
