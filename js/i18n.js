@@ -1,6 +1,5 @@
 const SUPPORTED_LOCALES = ["de", "en"];
 const DEFAULT_LOCALE = "de";
-const STORAGE_KEY = "pe-locale";
 
 let messages = null;
 let currentLocale = DEFAULT_LOCALE;
@@ -11,11 +10,6 @@ function detectLocale() {
   const fromUrl = params.get("lang");
   if (fromUrl && SUPPORTED_LOCALES.includes(fromUrl)) {
     return fromUrl;
-  }
-
-  const stored = localStorage.getItem(STORAGE_KEY);
-  if (stored && SUPPORTED_LOCALES.includes(stored)) {
-    return stored;
   }
 
   const browser = navigator.language?.slice(0, 2).toLowerCase();
@@ -92,7 +86,6 @@ async function setLocale(locale) {
   }
 
   currentLocale = locale;
-  localStorage.setItem(STORAGE_KEY, locale);
   updateUrl(locale);
   messages = await loadMessages(locale);
   applyTranslations();
@@ -122,7 +115,6 @@ async function maybeApply() {
 
 async function initI18n() {
   currentLocale = detectLocale();
-  localStorage.setItem(STORAGE_KEY, currentLocale);
   updateUrl(currentLocale);
 
   try {
