@@ -64,8 +64,8 @@ und ist als **User/Organization Site** eingerichtet.
 
 |            |                                                                                                                           |
 | ---------- | ------------------------------------------------------------------------------------------------------------------------- |
-| Repository | [Prinz-Entertainment/Prinz-Entertainment.github.io](https://github.com/Prinz-Entertainment/Prinz-Entertainment.github.io) |
-| Live-URL   | [https://prinz-entertainment.github.io/](https://prinz-entertainment.github.io/)                                          |
+| Repository | [Prinz-Entertainment/Prinz-Entertainment.github.io](https://Prinz-Entertainment.de) |
+| Live-URL   | [https://prinz-entertainment.de](https://prinz-entertainment.de)                                          |
 
 Nach Push auf `main` wird der Inhalt aus dem Repository-Root ausgeliefert
 (`.nojekyll` deaktiviert Jekyll). In den Repository-Einstellungen unter
