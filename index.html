@@ -12,17 +12,345 @@
 <link href="?" rel="alternate" hreflang="x-default"/>
 </head>
 <body class="is-loading bg-background text-on-background font-body-md overflow-x-hidden selection:bg-primary-fixed selection:text-primary">
-<div data-partial="partials/intro.html?v=20260609-3"></div>
-<div data-partial="partials/nav.html?v=20260609-3"></div>
-<div data-partial="partials/hero.html"></div>
-<div data-partial="partials/services.html"></div>
-<div data-partial="partials/gallery.html"></div>
-<div data-partial="partials/genres.html"></div>
-<div data-partial="partials/about.html"></div>
-<div data-partial="partials/references.html"></div>
-<div data-partial="partials/why.html"></div>
-<div data-partial="partials/contact.html"></div>
-<div data-partial="partials/footer.html"></div>
+<div aria-hidden="true" class="palmer-intro" data-palmer-intro>
+<div class="palmer-intro__line palmer-intro__line--top"></div>
+<div class="palmer-intro__stage">
+<img alt="" class="palmer-intro__logo" src="assets/prinz_logo_transparent.png"/>
+</div>
+<div class="palmer-intro__line palmer-intro__line--bottom"></div>
+</div>
+<nav class="fixed top-0 w-full z-[61] mix-blend-difference py-8 transition-all duration-700" id="main-nav">
+<div class="site-container relative flex items-center justify-between min-h-[44px]">
+<button aria-controls="mobile-menu" aria-expanded="false" class="menu-toggle md:hidden relative z-[62]" data-i18n-attr="aria-label:nav.openMenu" data-menu-toggle type="button">
+<span></span>
+<span></span>
+<span></span>
+</button>
+<div class="hidden md:flex flex-1 items-center gap-12">
+<a class="text-[10px] uppercase tracking-[0.3em] text-white hover:opacity-50 transition-opacity" data-i18n="nav.services" data-nav-link href="#services">Services</a>
+<a class="text-[10px] uppercase tracking-[0.3em] text-white hover:opacity-50 transition-opacity" data-i18n="nav.about" data-nav-link href="#about">About</a>
+</div>
+<div class="absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0 flex items-center justify-center md:px-8">
+<img alt="Prinz Logo" class="w-28 md:w-36 h-auto" src="assets/prinz-logo-framed.png"/>
+</div>
+<div class="hidden md:flex flex-1 items-center justify-end gap-12">
+<a class="text-[10px] uppercase tracking-[0.3em] text-white hover:opacity-50 transition-opacity" data-i18n="nav.events" data-nav-link href="#events">Events</a>
+<a class="text-[10px] uppercase tracking-[0.3em] text-white hover:opacity-50 transition-opacity" data-i18n="nav.inquire" data-nav-link href="#contact">Inquire</a>
+<div class="flex items-center gap-2 ml-4" role="group" aria-label="Language">
+<button class="text-[10px] uppercase tracking-[0.3em] text-white border-b pb-1 transition-opacity" data-lang-btn="de" type="button">DE</button>
+<span class="text-white/30 text-[10px]">|</span>
+<button class="text-[10px] uppercase tracking-[0.3em] text-white border-b pb-1 transition-opacity" data-lang-btn="en" type="button">EN</button>
+</div>
+</div>
+<span aria-hidden="true" class="nav-active-indicator hidden md:block" data-nav-indicator></span>
+<div aria-hidden="true" class="md:hidden w-11 shrink-0"></div>
+</div>
+</nav>
+<div aria-hidden="true" class="mobile-nav md:hidden" data-nav id="mobile-menu">
+<div class="mobile-nav__inner site-container">
+<a class="mobile-nav__link" data-i18n="nav.services" data-nav-link href="#services">Services</a>
+<a class="mobile-nav__link" data-i18n="nav.about" data-nav-link href="#about">About</a>
+<a class="mobile-nav__link" data-i18n="nav.events" data-nav-link href="#events">Events</a>
+<a class="mobile-nav__link" data-i18n="nav.inquire" data-nav-link href="#contact">Inquire</a>
+<div class="mobile-nav__lang" role="group" aria-label="Language">
+<button class="mobile-nav__lang-btn" data-lang-btn="de" type="button">DE</button>
+<span class="text-white/30 text-[10px]">|</span>
+<button class="mobile-nav__lang-btn" data-lang-btn="en" type="button">EN</button>
+</div>
+</div>
+</div>
+<header class="relative min-h-screen flex flex-col pt-[120px] bg-background">
+<div class="site-container flex flex-col flex-1">
+<div class="flex flex-col md:flex-row justify-between items-end mb-gutter gap-gutter">
+<div class="max-w-4xl">
+<div class="flex items-center gap-unit-2 mb-unit-4">
+<span class="editorial-line w-12"></span>
+<span class="font-label-caps text-label-caps uppercase tracking-widest" data-i18n="hero.tagline">Entertainment is the Key</span>
+</div>
+<h1 class="font-display-xl-mobile md:font-display-xl text-display-xl-mobile md:text-display-xl leading-[0.9] text-primary" data-i18n-html="hero.title">
+                    ENTFESSELTE <br/> ELEGANZ.
+                </h1>
+</div>
+<div class="hidden md:block font-label-caps text-label-caps text-on-surface-variant" data-i18n-html="hero.date">
+                09 May, 2026<br/>HAMBURG, DE
+            </div>
+</div>
+<div class="relative w-full h-[614px] md:h-[716px] overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 cursor-crosshair">
+<img alt="Entertainment is the Key" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-[2000ms]" data-i18n-attr="alt:hero.imageAlt" src="assets/events-piano.png"/>
+<div class="absolute bottom-gutter left-gutter max-w-md bg-background p-gutter">
+<p class="font-body-lg text-body-lg text-primary" data-i18n="hero.description">DJ-Auftritte, Klaviermusik und musikalische Begleitung für stilvolle Events.</p>
+</div>
+</div>
+</div>
+</header>
+<section class="py-section-padding bg-surface-container-low" id="services">
+<div class="site-container">
+<div class="text-center mb-24">
+<span class="text-primary font-label-sm tracking-widest uppercase block mb-4" data-i18n="services.label">Portfolio</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-6 uppercase" data-i18n="services.title">Exklusive Leistungen</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto font-body-lg" data-i18n="services.subtitle">Individuell-Musikalische Konzepte für höchste Ansprüche und unvergessliche Momente.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-10">
+<div class="elegant-card p-10 flex flex-col items-start text-left">
+<div class="w-16 h-16 bg-transparent flex items-center justify-center mb-8 border border-on-surface/20">
+<span class="material-symbols-outlined text-primary text-3xl">headset</span>
+</div>
+<h3 class="font-headline-md text-2xl text-on-surface mb-6 uppercase" data-i18n="services.dj.title">DJ-Service</h3>
+<p class="text-on-surface-variant font-body-md mb-10 leading-relaxed" data-i18n="services.dj.description">
+                    Vom lockeren Get-together bis zur ausgelassenen Party-Nacht. Stilvolle Musikauswahl trifft auf modernste Technik und feinfühliges Reading-the-Crowd.
+                </p>
+<div class="mt-auto w-full overflow-hidden">
+<img alt="DJ Service" class="w-full h-56 object-cover hover:scale-105 transition-transform duration-700 grayscale" data-i18n-attr="alt:services.dj.imageAlt" src="assets/service-dj.png"/>
+</div>
+</div>
+<div class="elegant-card p-10 flex flex-col items-start text-left">
+<div class="w-16 h-16 bg-transparent flex items-center justify-center mb-8 border border-on-surface/20">
+<span class="material-symbols-outlined text-primary text-3xl">piano</span>
+</div>
+<h3 class="font-headline-md text-2xl text-on-surface mb-6 uppercase" data-i18n="services.piano.title">Live-Piano</h3>
+<p class="text-on-surface-variant font-body-md mb-10 leading-relaxed" data-i18n="services.piano.description">
+                    Elegante Live-Untermalung am Piano für Empfänge, Dinner oder Trauungen. Klassische Stücke, moderne Interpretationen und gefühlvolle Eigenkompositionen.
+                </p>
+<div class="mt-auto w-full overflow-hidden">
+<img alt="Live Piano" class="w-full h-56 object-cover hover:scale-105 transition-transform duration-700 grayscale" data-i18n-attr="alt:services.piano.imageAlt" src="assets/service-piano.png"/>
+</div>
+</div>
+<div class="elegant-card p-10 flex flex-col items-start text-left">
+<div class="w-16 h-16 bg-transparent flex items-center justify-center mb-8 border border-on-surface/20">
+<span class="material-symbols-outlined text-primary text-3xl">auto_awesome</span>
+</div>
+<h3 class="font-headline-md text-2xl text-on-surface mb-6 uppercase" data-i18n="services.sound.title">TONTECHNIK</h3>
+<p class="text-on-surface-variant font-body-md mb-10 leading-relaxed" data-i18n="services.sound.description">
+                    Klarer Sound für besondere Momente. Ob Rede, Empfang, Live-Piano oder DJ-Set – ich übernehme Aufbau, Soundcheck und technische Betreuung, damit Ihre Veranstaltung klanglich sauber und professionell begleitet wird.
+                </p>
+<div class="mt-auto w-full overflow-hidden">
+<img alt="Eventbegleitung" class="w-full h-56 object-cover hover:scale-105 transition-transform duration-700 grayscale" data-i18n-attr="alt:services.sound.imageAlt" src="assets/service-sound.png"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-section-padding overflow-hidden bg-background">
+<div class="site-container mb-16 text-center">
+<span class="text-primary font-label-sm tracking-widest uppercase block mb-4" data-i18n="gallery.label">Inspiration</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface uppercase" data-i18n="gallery.title">Einblicke</h2>
+</div>
+<div class="flex gap-10 animate-[scroll_90s_linear_infinite] w-max">
+<div class="flex gap-10 shrink-0">
+<video aria-label="Event Impression 1" autoplay class="w-[400px] h-[550px] object-cover border border-on-surface/5 grayscale hover:grayscale-0 transition-all duration-700" data-i18n-attr="aria-label:gallery.videoLabel" loop muted playsinline preload="metadata">
+<source src="assets/gallery-event-1.mov"/>
+</video>
+<video aria-label="Event Impression 2" autoplay class="w-[550px] h-[550px] object-cover border border-on-surface/5 grayscale hover:grayscale-0 transition-all duration-700" data-i18n-attr="aria-label:gallery.videoLabel" loop muted playsinline preload="metadata">
+<source src="assets/gallery-event-2.mov"/>
+</video>
+<video aria-label="Event Impression 3" autoplay class="w-[400px] h-[550px] object-cover border border-on-surface/5 grayscale hover:grayscale-0 transition-all duration-700" data-i18n-attr="aria-label:gallery.videoLabel" loop muted playsinline preload="metadata">
+<source src="assets/gallery-event-3.mov"/>
+</video>
+<video aria-label="Event Impression 4" autoplay class="w-[450px] h-[550px] object-cover border border-on-surface/5 grayscale hover:grayscale-0 transition-all duration-700" data-i18n-attr="aria-label:gallery.videoLabel" loop muted playsinline preload="metadata">
+<source src="assets/gallery-event-4.mov"/>
+</video>
+<video aria-label="Event Impression 5" autoplay class="w-[400px] h-[550px] object-cover border border-on-surface/5 grayscale hover:grayscale-0 transition-all duration-700" data-i18n-attr="aria-label:gallery.videoLabel" loop muted playsinline preload="metadata">
+<source src="assets/gallery-event-5-small.mov"/>
+</video>
+<video aria-label="Event Impression 6" autoplay class="w-[550px] h-[550px] object-cover border border-on-surface/5 grayscale hover:grayscale-0 transition-all duration-700" data-i18n-attr="aria-label:gallery.videoLabel" loop muted playsinline preload="metadata">
+<source src="assets/gallery-event-6.mp4"/>
+</video>
+<video aria-label="Event Impression 7" autoplay class="w-[400px] h-[550px] object-cover border border-on-surface/5 grayscale hover:grayscale-0 transition-all duration-700" data-i18n-attr="aria-label:gallery.videoLabel" loop muted playsinline preload="metadata">
+<source src="assets/gallery-event-7.mov"/>
+</video>
+</div>
+</div>
+</section>
+<section class="bg-surface-container py-section-gap" id="genres">
+<div class="site-container">
+<h2 class="font-display-xl-mobile md:font-headline-lg text-primary mb-section-gap reveal-on-scroll" data-i18n="genres.title">Musikstile</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-outline-variant reveal-on-scroll">
+<div class="bg-background p-gutter aspect-square flex flex-col justify-between group cursor-pointer hover:bg-secondary-container transition-colors">
+<span class="font-label-caps text-label-caps text-on-surface-variant">01</span>
+<div>
+<h4 class="font-headline-md text-headline-md mb-unit" data-i18n="genres.electronic.title">Electronic &amp; Club</h4>
+<p class="font-body-md text-body-md text-on-surface-variant" data-i18n="genres.electronic.description">House, Techno, Afrobeats. Treibende Rhythmen für die Tanzfläche.</p>
+</div>
+<div class="w-12 h-12 border border-primary flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined">arrow_forward</span>
+</div>
+</div>
+<div class="bg-background p-gutter aspect-square flex flex-col justify-between group cursor-pointer hover:bg-[#e4e2e1] transition-colors">
+<span class="font-label-caps text-label-caps text-on-surface-variant">02</span>
+<div>
+<h4 class="font-headline-md text-headline-md mb-unit" data-i18n="genres.charts.title">Kultur &amp; Charts</h4>
+<p class="font-body-md text-body-md text-on-surface-variant" data-i18n="genres.charts.description">Aktuelle Hits und zeitlose Klassiker. Musik aus der Heimat für jede Generation.</p>
+</div>
+<div class="w-12 h-12 border border-primary flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined">arrow_forward</span>
+</div>
+</div>
+<div class="bg-background p-gutter aspect-square flex flex-col justify-between group cursor-pointer hover:bg-[#d0cccb] transition-colors">
+<span class="font-label-caps text-label-caps text-on-surface-variant">03</span>
+<div>
+<h4 class="font-headline-md text-headline-md mb-unit" data-i18n="genres.jazz.title">Jazz &amp; Lounge</h4>
+<p class="font-body-md text-body-md text-on-surface-variant" data-i18n="genres.jazz.description">Entspannte Klänge für Dinner und Empfänge. Unaufdringlich und edel.</p>
+</div>
+<div class="w-12 h-12 border border-primary flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-section-padding bg-background" id="about">
+<div class="site-container">
+<div class="flex flex-col items-center text-center mb-16 space-y-4">
+<span class="text-primary font-label-sm tracking-widest uppercase" data-i18n="about.label">Der Mensch hinter der Musik</span>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface max-w-3xl uppercase" data-i18n="about.title">
+                Persönlich, Leidenschaftlich, Einzigartig.
+            </h2>
+</div>
+<div class="grid md:grid-cols-12 gap-16 items-center">
+<div class="md:col-span-5">
+<div class="relative">
+<div class="absolute -inset-4 border border-on-surface/10"></div>
+<img alt="Sem Prinz Portrait" class="relative w-full h-[650px] object-cover grayscale border border-on-surface/5" data-i18n-attr="alt:about.portraitAlt" src="assets/portrait-width-922.png"/>
+</div>
+</div>
+<div class="md:col-span-7 space-y-10 text-left">
+<div class="space-y-6 text-on-surface-variant font-body-lg text-body-lg">
+<p data-i18n-html="about.paragraph1">
+                        Aus Hamburg heraus verbindet Prinz Entertainment musikalisches Feingefühl, technische Zuverlässigkeit und ein klares Verständnis für besondere Momente. Ob Klavier, DJ-Service oder professionelle Tontechnik, im Mittelpunkt steht nicht nur der Sound, sondern das gesamte <span class="text-on-surface italic font-medium">Erlebnis</span>.
+                    </p>
+<p data-i18n="about.paragraph2">
+                        Ich glaube daran, dass jedes Event einzigartig ist. Deshalb lege ich größten Wert auf eine detaillierte Planung und eine persönliche Absprache, um Ihre Vision klanglich perfekt umzusetzen. Zuverlässigkeit und ein diskretes, professionelles Auftreten sind dabei mein Fundament.
+                    </p>
+</div>
+<div class="grid grid-cols-2 gap-12 pt-6 border-t border-on-surface/10">
+<div>
+<div class="text-primary font-headline-md text-headline-md mb-2" data-i18n="about.stat1Value">10+ Jahre</div>
+<div class="text-on-surface/60 text-label-sm uppercase tracking-wider" data-i18n="about.stat1Label">Erfahrung</div>
+</div>
+<div>
+<div class="text-primary font-headline-md text-headline-md mb-2" data-i18n="about.stat2Value">50+</div>
+<div class="text-on-surface/60 text-label-sm uppercase tracking-wider" data-i18n="about.stat2Label">Begleitete Events</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-background py-section-gap border-t border-primary/10" id="events">
+<div class="site-container">
+<div class="flex justify-between items-baseline mb-gutter">
+<h2 class="font-headline-lg text-headline-lg uppercase" data-i18n="references.title">Referenzen</h2>
+<span class="font-label-caps text-label-caps" data-i18n="references.label">Selected Clients</span>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter border-t border-primary/20 pt-gutter">
+<div class="reveal-on-scroll">
+<p class="font-label-caps text-label-caps mb-unit opacity-50" data-i18n="references.hotels">Hotels</p>
+<p class="font-body-lg text-body-lg text-primary" data-i18n="references.hotelName">Radisson Blu Hamburg Dammtor</p>
+</div>
+<div class="reveal-on-scroll" style="transition-delay: 100ms;">
+<p class="font-label-caps text-label-caps mb-unit opacity-50" data-i18n="references.partners">Partners</p>
+<p class="font-body-lg text-body-lg text-primary" data-i18n="references.partnerName">Sonus Veranstaltungstechnik Hamburg</p>
+</div>
+<div class="reveal-on-scroll" style="transition-delay: 200ms;">
+<p class="font-label-caps text-label-caps mb-unit opacity-50" data-i18n="references.private">Private</p>
+<p class="font-body-lg text-body-lg text-primary" data-i18n="references.privateName">50+ Premium Hochzeiten</p>
+</div>
+<div class="reveal-on-scroll" style="transition-delay: 300ms;">
+<p class="font-label-caps text-label-caps mb-unit opacity-50" data-i18n="references.club">Club &amp; Open Events</p>
+<p class="font-body-lg text-body-lg text-primary" data-i18n-html="references.clubName">Just Pull Up<br/>Cath Me Events</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-section-gap border-t border-primary/10 bg-background">
+<div class="site-container">
+<div class="grid md:grid-cols-2 gap-32 items-start">
+<div class="space-y-16">
+<h2 class="text-headline-lg uppercase leading-none" data-i18n-html="why.title">Warum <br/>Prinz Entertainment?</h2>
+<div class="space-y-12">
+<div class="flex gap-8 group">
+<span class="material-symbols-outlined text-4xl text-primary opacity-20 group-hover:opacity-100 transition-opacity">piano</span>
+<div class="space-y-2 border-b border-black/10 pb-8 flex-1">
+<h4 class="text-headline-md uppercase tracking-tighter" data-i18n="why.personal.title">Persönlich</h4>
+<p class="text-body-md text-on-surface-variant" data-i18n="why.personal.description">Keine Standard-Konzepte. Jedes Detail wird in einem Vorgespräch genau nach Ihren Wünschen definiert.</p>
+</div>
+</div>
+<div class="flex gap-8 group">
+<span class="material-symbols-outlined text-4xl text-primary opacity-20 group-hover:opacity-100 transition-opacity">headphones</span>
+<div class="space-y-2 border-b border-black/10 pb-8 flex-1">
+<h4 class="text-headline-md uppercase tracking-tighter" data-i18n="why.stylish.title">Stilvoll</h4>
+<p class="text-body-md text-on-surface-variant" data-i18n="why.stylish.description">Von traditioneller Musik über internationale Sounds bis zu den aktuellen Charts aus aller Welt: Prinz Entertainment schafft die passende Stimmung mit Gefühl, Erfahrung und dem richtigen Gespür für jeden Moment.</p>
+</div>
+</div>
+<div class="flex gap-8 group">
+<span class="material-symbols-outlined text-4xl text-primary opacity-20 group-hover:opacity-100 transition-opacity">verified</span>
+<div class="space-y-2 border-b border-black/10 pb-8 flex-1">
+<h4 class="text-headline-md uppercase tracking-tighter" data-i18n="why.reliable.title">Zuverlässig</h4>
+<p class="text-body-md text-on-surface-variant" data-i18n="why.reliable.description">Pünktlichkeit, High-End Equipment und ein klares Back-up Konzept für absolute Sorgenfreiheit.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="md:pt-24">
+<div class="p-16 border border-black/10 relative bg-surface-container-low reveal-on-scroll">
+<span class="text-6xl absolute -top-8 -left-4 bg-background px-4 font-bold">“</span>
+<blockquote class="italic text-2xl font-light mb-12 leading-relaxed text-primary" data-i18n="why.quote">
+                    Musik ist nicht nur Klang, sondern die Unterschrift jeder Szene.
+                </blockquote>
+<div class="flex items-center gap-6">
+<div class="w-px h-12 bg-primary"></div>
+<div>
+<div class="text-headline-md text-primary" data-i18n="why.name">Sem Prinz</div>
+<div class="text-label-sm uppercase tracking-widest opacity-60" data-i18n="why.role">Gründer &amp; Künstler</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-section-padding bg-white" id="contact">
+<div class="site-container">
+<div class="grid gap-24 place-items-center">
+<div class="space-y-12 text-center flex flex-col items-center">
+<h2 class="text-6xl md:text-8xl font-extrabold uppercase leading-none kerning-tight" data-i18n-html="contact.title">Let's <br/> talk.</h2>
+<div class="space-y-8">
+<div class="flex flex-wrap items-center justify-center gap-6">
+<span class="material-symbols-outlined font-light">location_on</span>
+<span class="text-[11px] uppercase tracking-widest font-medium" data-i18n="contact.location">Hamburg, Deutschland</span>
+</div>
+<div class="flex flex-wrap items-center justify-center gap-6">
+<span class="material-symbols-outlined font-light">mail</span>
+<span class="text-[11px] uppercase tracking-widest font-medium">info@prinz-entertainment.de</span>
+</div>
+</div>
+<div class="pt-12">
+<img alt="Logo" class="h-16 opacity-10 mx-auto" src="assets/prinz-logo-mark.png"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-black text-white py-20 border-t border-white/5">
+<div class="site-container flex flex-col md:flex-row justify-between items-start md:items-end gap-16">
+<div class="space-y-12">
+<img alt="Logo" class="h-10" src="assets/prinz-logo-framed.png"/>
+<div class="flex gap-8">
+<a class="text-[10px] uppercase tracking-widest hover:opacity-50" href="https://www.instagram.com/sem.prinz/" rel="noopener noreferrer" target="_blank">Instagram</a>
+<a class="text-[10px] uppercase tracking-widest hover:opacity-50" href="https://www.tiktok.com/@sem.prinz" rel="noopener noreferrer" target="_blank">TikTok</a>
+<a class="text-[10px] uppercase tracking-widest hover:opacity-50" href="https://www.linkedin.com/in/sem-prinz-4ab254265/" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+</div>
+<div class="flex gap-8">
+<a class="text-[10px] uppercase tracking-widest text-white/50 hover:text-white transition-colors" href="impressum.html">Impressum</a>
+<a class="text-[10px] uppercase tracking-widest text-white/50 hover:text-white transition-colors" href="datenschutz.html">Datenschutz</a>
+</div>
+</div>
+<div class="text-right space-y-4">
+<div class="text-[10px] uppercase tracking-[0.4em] text-white/40" data-i18n="footer.copyright">© 2026 Prinz Entertainment</div>
+<div class="text-[10px] uppercase tracking-[0.4em] text-white/40" data-i18n="footer.rights">All Rights Reserved — Hamburg</div>
+</div>
+</div>
+</footer>
 <script src="js/i18n.js"></script>
 <script src="js/includes.js"></script>
 <script src="js/main.js?v=20260609-3"></script>
