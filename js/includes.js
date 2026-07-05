@@ -15,7 +15,9 @@ async function loadPartials() {
         })
     );
 
-    document.dispatchEvent(new Event("partials:loaded"));
+    window.setTimeout(() => {
+        document.dispatchEvent(new Event("partials:loaded"));
+    }, 0);
 }
 
 loadPartials().catch((error) => {

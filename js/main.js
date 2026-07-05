@@ -253,4 +253,24 @@ function initPage() {
   initMobileMenu();
 }
 
-document.addEventListener("partials:loaded", initPage);
+let pageInitialized = false;
+
+function initPageOnce() {
+  if (pageInitialized) return;
+  pageInitialized = true;
+  initPage();
+}
+
+document.addEventListener("partials:loaded", initPageOnce);
+
+function initWhenPartialsAreReady() {
+  if (!document.querySelector("[data-partial]")) {
+    initPageOnce();
+  }
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initWhenPartialsAreReady, { once: true });
+} else {
+  initWhenPartialsAreReady();
+}
